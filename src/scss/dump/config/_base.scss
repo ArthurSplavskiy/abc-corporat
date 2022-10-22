@@ -1,0 +1,30 @@
+// * IBG
+// Сниппет (HTML): ibg (div c картинкой и классами)
+// Сниппет (HTML): ibga (a c картинкой и классами)
+[class*="__image-ibg"] {
+    position: relative;
+
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+    }
+}
+
+.wrapper {
+	color: $white;
+}
+
+.mt-0 {
+	margin-top: 0!important;
+}
+
+.mb-160 {
+	margin-bottom: 160px;
+	@media (max-width: $mobile) {
+		margin-bottom: 80px;
+	}
+}

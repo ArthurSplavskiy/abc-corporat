@@ -1,0 +1,31 @@
+@import "hero";
+@import "media";
+@import "hover-tabs";
+@import "decor";
+@import "advantage";
+@import "sertificates";
+@import "partners";
+@import "projects";
+@import "contacts";
+
+.section-headline {
+  h2 {
+    max-width: 648px;
+    line-height: 120%;
+    &:not(:last-child) {
+      margin-bottom: 24px;
+      @media (max-width: $tablet) {
+        margin-bottom: 16px;
+      }
+    }
+  }
+  p {
+    max-width: 536px;
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+    @media (min-width: $tablet) {
+      margin-left: 112px;
+    }
+  }
+}

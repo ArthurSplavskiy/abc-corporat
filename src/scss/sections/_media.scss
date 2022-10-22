@@ -1,0 +1,65 @@
+.s-media {
+  color: white;
+  position: relative;
+
+  &-decor {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+  }
+  &-big-offset {
+    .s-media-content {
+      padding: rem(200) 0;
+      @media(max-width: $mobile) {
+        padding: rem(72) 0;
+      }
+    }
+  }
+  &-only-text {
+    .s-media-text {
+      max-width: rem(760);
+    }
+  }
+  &-content {
+    h2 {
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+      @media(max-width: $mobile) {
+        &:not(:last-child) {
+          margin-bottom: 24px;
+        }
+      }
+      & ~ * {
+        @media(min-width: $mobile) {
+          margin-left: rem(112);
+        }
+      }
+    }
+    h4 {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 40px;
+      @media(max-width: $mobile) {
+        font-size: 16px;
+        line-height: 24px;
+      }
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
+    p {
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
+    .btn {
+      margin-top: 32px;
+      @media(max-width: $mobile) {
+        margin-top: 24px;
+      }
+    }
+  }
+}

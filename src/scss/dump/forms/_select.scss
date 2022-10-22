@@ -1,0 +1,115 @@
+.select {
+    &._select-open {
+        .select__value::before {
+            transform: rotate(-180deg);
+        }
+    }
+
+    &._select-open + .form__required {
+        display: none;
+    }
+}
+
+.select {
+    position: relative;
+    line-height: 1;
+    width: 100%;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    color: $black;
+
+    &__row {
+        display: grid !important;
+        grid-template-columns: 24px 1fr;
+        gap: 12px;
+        align-items: center;
+    }
+
+    // .select__item
+    &__item {
+        position: relative;
+    }
+
+    // .select__title
+    &__title {
+        width: 100%;
+        color: $white;
+        border: 2px solid #E4EBF3;
+        background: $white;
+        cursor: pointer;
+        border-radius: 8px;
+        color: $black;
+    }
+
+    // .select__value
+    &__value {
+        position: relative;
+        display: flex;
+        padding: 0 16px;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        height: 60px;
+        width: 100%;
+
+        span {
+            height: auto;
+            overflow: hidden;
+            display: box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            line-height: 100%;
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: url("../img/interface/chevron-down.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: all 0.3s ease 0s;
+        }
+    }
+
+    &__input {
+        width: 100%;
+        background-color: transparent;
+        height: 100%;
+    }
+
+    // .select__options
+    &__options {
+        display: none;
+        position: absolute;
+        top: 64px;
+        min-width: 100%;
+        left: 0;
+        background: $white;
+        border: 1px solid #E4EBF3;
+        border-radius: 8px;
+        z-index: 2;
+        overflow: auto;
+        max-height: 200px;
+    }
+
+    // .select__option
+    &__option {
+        width: 100%;
+        display: block;
+        cursor: pointer;
+        height: 60px;
+        text-align: left;
+        padding: 0 20px;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid rgba($black, 0.1);
+        }
+
+        &:hover {
+            background: $primary-bg-hover;
+        }
+    }
+}

@@ -1,0 +1,60 @@
+@function rem($px) {
+    $result: math.div($px, 16) + rem;
+
+    @return $result;
+}
+
+@function em($px, $current: 16) {
+    $result: math.div($px, $current) + em;
+
+    @return $result;
+}
+
+// * * * Default font
+$defaultFontFamily: "Poppins", arial, helvetica, sans-serif;
+$secondFontFamily: arial, helvetica, sans-serif;
+$fontSize: rem(16); // где 16(px) - размер шрифта по умолчанию из макета
+
+// * * * Settings
+// * Page minimal width
+$minWidth: 375;
+
+// * Frame width (maket)
+$maxWidth: 1440;
+
+// * Page container width (0 = without container)
+$maxWidthContainer: 1400;
+$maxWidthContainerPX: 1400px;
+
+// * Container padding
+// (30 = 15px left and right, 0 = without padding)
+$containerPadding: 40;
+
+// * Adaptive type:
+// 1 = отзывчивость (у контейнера нет брейкпоинтов),
+// 2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
+$responsiveType: 1;
+
+// Ширина страбатывания первого брейкпоинта
+$containerWidth: $maxWidthContainer + $containerPadding; // 1256
+// * Breakpoinds
+$fullHd: em(1920);
+$pc: em($containerWidth); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
+$mobile: em(767.98); // Телефоны L
+$mobileSmall: em(479.98); // Телефоны S
+// * * * Colors
+// * Main text color
+$white: #FFFFFF;
+$black: #000000;
+$grey: rgba($black, 0.5);
+$red: #F91B1C;
+$yellow: #FFDD70;
+$primary-bg: linear-gradient(90deg, #03C3CF 0%, #3EF4FF 100%);
+$primary-bg-hover: linear-gradient(90deg, #39E0EB 0%, #00AAB5 100%);
+$hover: #03C3CF;
+$defaultTransition: all 0.2s ease-out;
+$primary: #3EF4FF;
+
+// * z-indexes
+$z-indexes: ();

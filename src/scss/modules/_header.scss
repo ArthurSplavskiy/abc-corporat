@@ -1,0 +1,44 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: z('header');
+  transition: box-shadow 0.3s, background 0.4s;
+
+  &-logo {
+    max-width: 130px;
+    @media(max-width: $mobile) {
+      max-width: 72px;
+    }
+  }
+
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: calc($containerPadding / 2) + px rem(60);
+    @media(max-width: 1465px) {
+      max-width: $containerWidth;
+      box-sizing: content-box;
+      margin: 0 auto;
+      padding: calc($containerPadding / 2) + px;
+    }
+  }
+
+  &-menu-btn {
+    @extend %flex-center;
+    position: relative;
+    width: rem(64);
+    height: rem(64);
+    border-radius: 100%;
+    border-radius: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 3;
+    &-decor {
+      @extend %absolute-center;
+    }
+  }
+}
