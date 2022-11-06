@@ -1,76 +1,211 @@
 .s-hero {
-  position: relative;
+	position: relative;
+	color: white;
+	@media (max-width: $mobile) {
+		overflow: hidden;
+	}
 
-  & > .container {
-    position: relative;
-    z-index: 2;
-  }
+	& > .container {
+		position: relative;
+		z-index: 2;
+	}
 
-  &-image {
-    width: rem(820);
-    height: rem(720);
-    position: absolute;
-    top: 0;
-    right: 0;
-    @media(max-width: $tablet) {
-      width: rem(468);
-      height: rem(670);
-    }
-    @media(max-width: $mobileSmall) {
-      width: rem(320);
-      height: rem(560);
-    }
-    &:after {
-      content: '';
-      width: rem(820);
-      height: rem(720);
-      position: absolute;
-      top: 0;
-      right: 0;
-      background: linear-gradient(112.77deg, rgba(10, 10, 10, 0.5) 26.93%, rgba(0, 0, 0, 0) 106.39%);
-      @media(max-width: $tablet) {
-        width: rem(468);
-        height: rem(670);
-        background: linear-gradient(0deg, rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.8));
-      }
-      @media(max-width: $mobileSmall) {
-        width: rem(320);
-        height: rem(560);
-      }
-    }
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
+	&-image {
+		width: rem(820);
+		height: rem(720);
+		position: absolute;
+		top: 0;
+		right: 0;
+		transform: translate(20%, -20%);
+		transition: transform 1s ease-out;
+		&._animated {
+			transform: translate(0);
+		}
+		@media (max-width: $tablet) {
+			width: rem(468);
+			height: rem(670);
+		}
+		@media (max-width: $mobileSmall) {
+			width: 100%;
+			height: rem(560);
+		}
+		&:after {
+			content: '';
+			width: rem(820);
+			height: rem(720);
+			position: absolute;
+			top: 0;
+			right: 0;
+			background: linear-gradient(
+				112.77deg,
+				rgba(10, 10, 10, 0.5) 26.93%,
+				rgba(0, 0, 0, 0) 106.39%
+			);
+			@media (max-width: $tablet) {
+				width: rem(468);
+				height: rem(670);
+				background: linear-gradient(0deg, rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.8));
+			}
+			@media (max-width: $mobileSmall) {
+				width: 100%;
+				height: rem(560);
+			}
+		}
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
 
-  &-content {
-    padding-top: rem(177);
-    padding-bottom: rem(56);
-    @media(max-width: $mobile) {
-      padding-top: rem(104);
-    }
-  }
+	&-content {
+		max-width: calc(100vw - 24px);
+		position: relative;
+		padding-top: rem(177);
+		padding-bottom: rem(56);
+		@media (max-width: $mobile) {
+			padding-top: rem(104);
+		}
+	}
 
-  &-logo {
-    margin-bottom: rem(76);
-    @media(max-width: $mobile) {
-      margin-bottom: rem(56);
-    }
-  }
+	&-small-title {
+		max-width: 984px;
+		font-weight: 700;
+		font-size: 80px;
+		line-height: 80px;
+		text-transform: uppercase;
+		margin-bottom: rem(24);
+		@media (max-width: $mobile) {
+			font-size: 40px;
+			line-height: 46px;
+			margin-bottom: rem(8);
+		}
+	}
 
-  &-btns {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    @media(max-width: $tablet) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-    @media(max-width: $mobile) {
-      grid-template-columns: 1fr;
-    }
-  }
+	&-title {
+		font-weight: 700;
+		font-size: 80px;
+		line-height: 80px;
+		text-transform: uppercase;
+		margin-bottom: rem(76);
+		@media (max-width: $mobile) {
+			margin-bottom: rem(56);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: 42px;
+			line-height: 42px;
+		}
+		div {
+			overflow: hidden;
+		}
+		span[data-lottie] {
+			@media (max-width: $mobileSmall) {
+				max-width: 50px;
+			}
+			svg {
+				margin-bottom: -4px;
+			}
+		}
+		span:not([data-lottie]) {
+			margin-left: -20px;
+			transition: transform 2s ease-out;
+			transform: translateY(200%);
+			background: linear-gradient(
+				120.65deg,
+				#585c62 28.62%,
+				#ffffff 46.82%,
+				#858d8e 55.91%,
+				#2b2f2f 76.96%,
+				#e9e9e9 98%,
+				#343939 113.92%,
+				#ffffff 123.59%,
+				#141515 135.53%
+			);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			text-fill-color: transparent;
+			@media (max-width: $mobileSmall) {
+				margin-left: -12px;
+			}
+		}
+		&._animated {
+			span {
+				transform: translate(0);
+			}
+		}
+	}
 
+	&-descr {
+		text-transform: uppercase;
+		max-width: 648px;
+		@media (min-width: $tablet) {
+			margin-left: 112px;
+		}
+		&:not(:last-child) {
+			margin-bottom: 64px;
+			@media (max-width: $mobile) {
+				margin-bottom: 24px;
+			}
+		}
+	}
+
+	&-descr-offset {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		max-width: 424px;
+		text-transform: uppercase;
+		p {
+			margin-bottom: 40px;
+		}
+		@media(max-width: $mobile) {
+			.btn {
+				align-self: flex-start;
+			}
+		}
+		@media (min-width: $mobile) {
+			margin-left: 112px;
+		}
+	}
+
+	&-anchor {
+		max-width: 80px;
+		svg {
+			transform: scale(2.5) translateY(7px) rotate(-180deg) !important;
+		}
+		@media (min-width: $tablet) {
+			margin-left: 112px;
+		}
+	}
+
+	&-vertical-text {
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 14px;
+		text-transform: uppercase;
+		color: white;
+		position: absolute;
+		word-spacing: 16px;
+		right: 0;
+		bottom: 100px;
+		width: auto;
+		-webkit-writing-mode: vertical-rl;
+		@media (max-width: $tablet) {
+			display: none;
+		}
+	}
+
+	&-btns {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 24px;
+		@media (max-width: $tablet) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 18px;
+		}
+		@media (max-width: $mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
 }

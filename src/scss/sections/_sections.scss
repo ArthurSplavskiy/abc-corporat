@@ -1,31 +1,54 @@
-@import "hero";
-@import "media";
-@import "hover-tabs";
-@import "decor";
-@import "advantage";
-@import "sertificates";
-@import "partners";
-@import "projects";
-@import "contacts";
+@import 'hero';
+@import 'media';
+@import 'hover-tabs';
+@import 'decor';
+@import 'advantage';
+@import 'sertificates';
+@import 'partners';
+@import 'projects';
+@import 'contacts';
+@import 'article';
+@import 'team-promo';
+@import 'team';
+@import 'quote';
+@import 'vacancy';
+@import 'timeline';
+@import 'portfolio';
 
 .section-headline {
-  h2 {
-    max-width: 648px;
-    line-height: 120%;
-    &:not(:last-child) {
-      margin-bottom: 24px;
-      @media (max-width: $tablet) {
-        margin-bottom: 16px;
-      }
-    }
-  }
-  p {
-    max-width: 536px;
-    &:not(:last-child) {
-      margin-bottom: 8px;
-    }
-    @media (min-width: $tablet) {
-      margin-left: 112px;
-    }
-  }
+	h2 {
+		max-width: 648px;
+		line-height: 120%;
+		&:not(:last-child) {
+			margin-bottom: 24px;
+			@media (max-width: $tablet) {
+				margin-bottom: 16px;
+			}
+		}
+		& ~ * {
+			max-width: 536px;
+			@media (min-width: $tablet) {
+				margin-left: 112px;
+			}
+		}
+	}
+	p {
+		&:not(:last-child) {
+			margin-bottom: 8px;
+		}
+	}
+}
+.section-color-black {
+	 color: white;
+	 background: black;
+ }
+.section-color-white {
+	color: black;
+	background: white;
+}
+.section-offset {
+	padding: 80px 0;
+	@media (max-width: $mobile) {
+		padding: 40px 0;
+	}
 }

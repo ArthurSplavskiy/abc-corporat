@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="uk" prefix="og: http://ogp.me/ns#">
+	@@include('html/_head.htm',{})
+
+	<body class="p-template">
+		<div class="wrapper" id="mainTop" style="overflow: hidden">
+			@@include('html/_preloader-markup.htm',{}) @@include('html/_header.htm',{})
+			<main>
+				<section class="s-hero">
+					<div class="s-hero-image" data-an="_fadeIn">
+						<img src="img/blog-promo.jpeg" alt="abc" />
+						<style>
+							.s-hero-image {
+								height: 100%;
+							}
+							.s-hero-image:after {
+								height: 100%;
+							}
+						</style>
+					</div>
+					<div class="container">
+						<div class="s-hero-content" data-an="_fadeUp20">
+							<nav class="breadcrumbs">
+								<ul class="breadcrumbs__list" itemscope itemtype="http://schema.org/BreadcrumbList">
+									<li itemscope itemtype="http://schema.org/ListItem">
+										<a class="breadcrumbs__link" itemprop="item" href="index.html">
+											<img src="img/interface/home-ico.svg" alt="home" />
+										</a>
+										<meta itemprop="position" content="1" />
+									</li>
+									<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+										<span class="breadcrumbs__link" itemprop="name"
+											>БЛОГ</span
+										>
+										<meta itemprop="position" content="2" />
+									</li>
+								</ul>
+							</nav>
+							<h1 class="s-hero-small-title" data-an="_fadeUp20">БЛОГ
+								ABCOMMUNICATION</h1>
+							<div class="s-hero-descr page-text" data-an="_fadeUp">
+								Within 22 years of our experience, we have worked for over 200 global clients helping them solve their business problems and digitally transform their organisation.
+							</div>
+							<a
+								href="next-section"
+								class="s-hero-anchor"
+								data-lottie="hero-anchor"
+								data-anchor="next-section"></a>
+						</div>
+					</div>
+				</section>
+				<section id="next-section" class="s-portfolio section-color-white section-offset">
+					<div class="container">
+						<div class="s-portfolio-filter">
+							<div class="s-portfolio-filter-select">
+								<span>ФІЛЬТРУВАТИ за:</span>
+								<img src="img/interface/filter-icon.svg" alt="filter">
+								<select name="form[]" class="form">
+									<option value="1" selected>Пункт №1</option>
+									<option value="2">Пункт №2</option>
+									<option value="3">Пункт №3</option>
+									<option value="4">Пункт №4</option>
+								</select>
+							</div>
+						</div>
+						<div class="s-portfolio-list">
+							@@include('html/_blog-card.htm',{})
+							@@include('html/_blog-card.htm',{})
+							@@include('html/_blog-card.htm',{})
+
+							@@include('html/_blog-card.htm',{})
+							@@include('html/_blog-card.htm',{})
+							@@include('html/_blog-card.htm',{})
+
+							@@include('html/_blog-card.htm',{})
+							@@include('html/_blog-card.htm',{})
+							@@include('html/_blog-card.htm',{})
+						</div>
+						<div class="s-portfolio-pagination" data-an="_fadeIn">
+							<div class="s-portfolio-pagination-btn">
+								<a href="#" class="btn btn-black">ПОКАЗАТИ БІЛЬШЕ</a>
+							</div>
+							@@include('html/_pagging.htm',{})
+						</div>
+					</div>
+				</section>
+			</main>
+			@@include('html/_footer.htm',{}) @@include('html/_js.htm',{})
+		</div>
+	</body>
+</html>

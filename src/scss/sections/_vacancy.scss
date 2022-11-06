@@ -1,0 +1,107 @@
+.s-vacancy {
+	padding: 80px 0;
+	@media (min-width: $mobile) {
+		padding: 72px 0;
+	}
+	.tabs {
+		margin-top: 32px;
+		@media (min-width: $mobile) {
+			margin-top: 64px;
+			display: grid;
+			grid-template-columns: 424px 1fr;
+			gap: 136px;
+		}
+		@media (max-width: $tablet) {
+			grid-template-columns: 360px 1fr;
+			gap: 40px;
+		}
+		&-title {
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+			align-items: center;
+			background: none;
+			border-bottom: 1px solid #525259;
+			transition: $transition;
+			cursor: pointer;
+			padding: 12px 0;
+
+			font-weight: 600;
+			font-size: 24px;
+			line-height: 100%;
+			text-transform: uppercase;
+			color: #525259;
+
+			@media (max-width: $mobile) {
+				font-size: 18px;
+				padding: 16px 0;
+			}
+
+			& > * {
+				pointer-events: none;
+			}
+
+			&._tab-active {
+				color: white;
+				border-color: white;
+				svg {
+					stroke: white;
+				}
+				@media (max-width: $mobile) {
+					color: $main-blue;
+					border-color: transparent;
+					svg {
+						stroke: $main-blue;
+						transform: rotate(-45deg);
+					}
+				}
+			}
+			svg {
+				transition: $transition;
+				@media (max-width: $mobile) {
+					max-width: 24px;
+					transform: rotate(135deg);
+				}
+			}
+		}
+		&-body {
+			@media (max-width: $mobile) {
+				padding-bottom: 16px;
+			}
+			h3 {
+				font-weight: 700;
+				font-size: 32px;
+				margin-bottom: 28px;
+				@media (max-width: $mobile) {
+					display: none;
+				}
+			}
+			h4 {
+				font-weight: 700;
+				font-size: 14px;
+				text-transform: uppercase;
+				color: #8aa7fc;
+				margin-bottom: 8px;
+				@media (max-width: $mobile) {
+					font-size: 12px;
+				}
+			}
+			ul {
+				margin-bottom: 40px;
+				@media (max-width: $mobile) {
+					margin-bottom: 20px;
+				}
+				li {
+					font-weight: 500;
+					font-size: 14px;
+					line-height: 32px;
+				}
+			}
+			.btn {
+				@media (max-width: $mobile) {
+					width: 100%;
+				}
+			}
+		}
+	}
+}

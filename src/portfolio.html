@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="uk" prefix="og: http://ogp.me/ns#">
+	@@include('html/_head.htm',{})
+
+	<body class="p-template">
+		<div class="wrapper" id="mainTop" style="overflow: hidden">
+			@@include('html/_preloader-markup.htm',{}) @@include('html/_header.htm',{})
+			<main>
+				<section class="s-hero">
+					<div class="s-hero-image" data-an="_fadeIn">
+						<img src="img/portfolio-hero.jpeg" alt="abc" />
+						<style>
+							.s-hero-image {
+								height: 100%;
+							}
+							.s-hero-image:after {
+								height: 100%;
+							}
+						</style>
+					</div>
+					<div class="container">
+						<div class="s-hero-content" data-an="_fadeUp20">
+							<nav class="breadcrumbs">
+								<ul class="breadcrumbs__list" itemscope itemtype="http://schema.org/BreadcrumbList">
+									<li itemscope itemtype="http://schema.org/ListItem">
+										<a class="breadcrumbs__link" itemprop="item" href="index.html">
+											<img src="img/interface/home-ico.svg" alt="home" />
+										</a>
+										<meta itemprop="position" content="1" />
+									</li>
+									<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+										<span class="breadcrumbs__link" itemprop="name"
+											>ПОРТФОЛІО</span
+										>
+										<meta itemprop="position" content="2" />
+									</li>
+								</ul>
+							</nav>
+							<h1 class="s-hero-small-title" data-an="_fadeUp20">ПОРТФОЛІО
+								ABCOMMUNICATION</h1>
+							<div class="s-hero-descr page-text" data-an="_fadeUp">
+								Within 22 years of our experience, we have worked for over 200 global clients helping them solve their business problems and digitally transform their organisation.
+							</div>
+							<a
+								href="next-section"
+								class="s-hero-anchor"
+								data-lottie="hero-anchor"
+								data-anchor="next-section"></a>
+						</div>
+					</div>
+				</section>
+				<section id="next-section" class="s-partners s-partners-with-border">
+					<div class="container">
+						<div class="s-partners-content">
+							<div class="partners-slider" data-swiper="partners-slider" data-an="_fadeIn">
+								<div class="partners-slider__swiper">
+									<a href="#" class="partners-slider-slide">
+										<img src="img/interface/ibm-logo.svg" alt="ibm" />
+									</a>
+									<a href="#" class="partners-slider-slide">
+										<img src="img/interface/lenovo-logo.svg" alt="lenovo" />
+									</a>
+									<a href="#" class="partners-slider-slide">
+										<img src="img/interface/microsoft-logo.svg" alt="microsoft" />
+									</a>
+									<a href="#" class="partners-slider-slide">
+										<img src="img/interface/ibm-logo.svg" alt="ibm" />
+									</a>
+									<a href="#" class="partners-slider-slide">
+										<img src="img/interface/lenovo-logo.svg" alt="lenovo" />
+									</a>
+									<a href="#" class="partners-slider-slide">
+										<img src="img/interface/microsoft-logo.svg" alt="microsoft" />
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="s-portfolio">
+					<div class="container">
+						<div class="s-portfolio-filter">
+							<a href="#" class="btn btn-with-border">#МАЛИЙ БІЗНЕС</a>
+							<a href="#" class="btn btn-with-border">#СЕРЕДНІЙ БІЗНЕС</a>
+							<a href="#" class="btn btn-with-border">#ВЕЛИКИЙ БІЗНЕС</a>
+							<a href="#" class="btn btn-with-border">#ДЕРЖЗАМОВЛЕННЯ</a>
+						</div>
+						<div class="s-portfolio-list">
+							@@include('html/_product-card.htm',{})
+							@@include('html/_product-card.htm',{})
+							@@include('html/_product-card.htm',{})
+
+							@@include('html/_product-card.htm',{})
+							@@include('html/_product-card.htm',{})
+							@@include('html/_product-card.htm',{})
+
+							@@include('html/_product-card.htm',{})
+							@@include('html/_product-card.htm',{})
+							@@include('html/_product-card.htm',{})
+						</div>
+						<div class="s-portfolio-pagination" data-an="_fadeIn">
+							<div class="s-portfolio-pagination-btn">
+								<a href="#" class="btn btn-white">ПОКАЗАТИ БІЛЬШЕ</a>
+							</div>
+							@@include('html/_pagging.htm',{})
+						</div>
+					</div>
+				</section>
+				<section class="s-sertificates">
+					<div class="container">
+						<div class="section-headline" data-an="_fadeIn">
+							<h2 class="page-title">лІЦЕНЗІЇ ТА СЕРТИФІКАТИ</h2>
+							<p class="page-text">
+								Ми співпрацюємо з компаніями міжнародного рівня, що допомагає нам створювати та
+								підтримувати якісний продукт.
+							</p>
+						</div>
+						<div class="sertificates-slider-content" data-an="_fadeIn" data-del="0.3">
+							<div class="sertificates-slider-nav">
+								<div class="sliders-controls">
+									<button data-swiper-control="sertificates-slider-prev">
+										<img src="img/interface/slider-arrow.svg" alt="prev" />
+									</button>
+									<button data-swiper-control="sertificates-slider-next">
+										<img src="img/interface/slider-arrow.svg" alt="next" />
+									</button>
+								</div>
+							</div>
+							<div class="sertificates-slider" data-swiper="sertificates-slider">
+								<div class="sertificates-slider__swiper">
+									<a href="#" class="sertificates-slider-slide">
+										<div class="sertificates-slider-slide-logo">
+											<img src="img/interface/ibm-logo.svg" alt="ibm" />
+										</div>
+										<div class="sertificates-slider-slide-title">
+											<h4>infoRMATION SECURITY: 4 KEY GOALS</h4>
+										</div>
+									</a>
+									<a href="#" class="sertificates-slider-slide">
+										<div class="sertificates-slider-slide-logo">
+											<img src="img/interface/microsoft-logo.svg" alt="ibm" />
+										</div>
+										<div class="sertificates-slider-slide-title">
+											<h4>infoRMATION SECURITY: 4 KEY GOALS</h4>
+										</div>
+									</a>
+									<a href="#" class="sertificates-slider-slide">
+										<div class="sertificates-slider-slide-logo">
+											<img src="img/interface/ibm-logo.svg" alt="ibm" />
+										</div>
+										<div class="sertificates-slider-slide-title">
+											<h4>infoRMATION SECURITY: 4 KEY GOALS</h4>
+										</div>
+									</a>
+									<a href="#" class="sertificates-slider-slide">
+										<div class="sertificates-slider-slide-logo">
+											<img src="img/interface/microsoft-logo.svg" alt="ibm" />
+										</div>
+										<div class="sertificates-slider-slide-title">
+											<h4>infoRMATION SECURITY: 4 KEY GOALS</h4>
+										</div>
+									</a>
+									<a href="#" class="sertificates-slider-slide">
+										<div class="sertificates-slider-slide-logo">
+											<img src="img/interface/ibm-logo.svg" alt="ibm" />
+										</div>
+										<div class="sertificates-slider-slide-title">
+											<h4>infoRMATION SECURITY: 4 KEY GOALS</h4>
+										</div>
+									</a>
+									<a href="#" class="sertificates-slider-slide">
+										<div class="sertificates-slider-slide-logo">
+											<img src="img/interface/microsoft-logo.svg" alt="ibm" />
+										</div>
+										<div class="sertificates-slider-slide-title">
+											<h4>infoRMATION SECURITY: 4 KEY GOALS</h4>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			@@include('html/_footer.htm',{}) @@include('html/_js.htm',{})
+		</div>
+	</body>
+</html>

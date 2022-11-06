@@ -1,49 +1,68 @@
 button {
-  &:active {
-    transform: scale(0.95);
-  }
+	&:active {
+		transform: scale(0.95) !important;
+	}
 }
 
 .btn {
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 14px;
-  text-align: center;
-  text-transform: uppercase;
-  color: white;
-  padding: 17px;
-  border-radius: 10px;
-  transition: $transition;
-  cursor: pointer;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 14px;
+	text-align: center;
+	text-transform: uppercase;
+	color: white;
+	padding: 17px;
+	border-radius: 10px;
+	transition: $transition;
+	cursor: pointer;
+	min-width: 200px;
+	&:hover {
+		background: white;
+		color: black;
+	}
 
-  &-big {
-    font-size: 16px;
-    padding: 24px;
-    border: 1px solid white;
-    @media(max-width: $mobile) {
-      padding: 17px;
-      font-size: 14px;
-    }
-    &:hover {
-      background: linear-gradient(91.12deg, #6E676A 25.34%, #A8A5A8 75.38%, #F4F4F9 101.49%);
-      color: black;
-    }
-  }
+	&-big {
+		font-size: 16px;
+		padding: 24px;
+		border: 1px solid white;
+		@media (max-width: $mobile) {
+			padding: 17px;
+			font-size: 14px;
+		}
+		&:hover {
+			background: linear-gradient(91.12deg, #6e676a 25.34%, #a8a5a8 75.38%, #f4f4f9 101.49%);
+			color: black;
+		}
+	}
 
-  &-white {
-    color: black;
-    background: white;
-    &:hover {
-      background: $hover-grey;
-    }
-  }
+	&-white {
+		color: black;
+		background: white;
+		&:hover {
+			background: $hover-grey;
+		}
+	}
 
-  &-black {
-    color: white;
-    background: black;
-    &:hover {
-      background: rgba(black, 0.8);
-    }
-  }
+	&-black {
+		color: white;
+		background: black;
+		&:hover {
+			color: white;
+			background: rgba(black, 0.8);
+		}
+	}
 
+	&-blue {
+		width: 100%;
+		color: $main-blue;
+		border: 1px solid $main-blue;
+		&:hover {
+			background: $main-blue;
+			color: white;
+		}
+	}
+
+	&-with-border {
+		border: 1px solid white;
+	}
 }

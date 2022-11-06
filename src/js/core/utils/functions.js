@@ -6,7 +6,8 @@ export function isWebp() {
 		webP.onload = webP.onerror = function () {
 			callback(webP.height == 2);
 		};
-		webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
+		webP.src =
+			'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
 	}
 	// Добавление класса _webp или _no-webp для HTML
 	testWebP(function (support) {
@@ -15,7 +16,32 @@ export function isWebp() {
 	});
 }
 /* Проверка мобильного браузера */
-export let isMobile = { Android: function () { return navigator.userAgent.match(/Android/i); }, BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function () { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function () { return navigator.userAgent.match(/IEMobile/i); }, any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
+export let isMobile = {
+	Android: function () {
+		return navigator.userAgent.match(/Android/i);
+	},
+	BlackBerry: function () {
+		return navigator.userAgent.match(/BlackBerry/i);
+	},
+	iOS: function () {
+		return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+	},
+	Opera: function () {
+		return navigator.userAgent.match(/Opera Mini/i);
+	},
+	Windows: function () {
+		return navigator.userAgent.match(/IEMobile/i);
+	},
+	any: function () {
+		return (
+			isMobile.Android() ||
+			isMobile.BlackBerry() ||
+			isMobile.iOS() ||
+			isMobile.Opera() ||
+			isMobile.Windows()
+		);
+	}
+};
 /* Добавление класса touch для HTML если браузер мобильный */
 export function addTouchClass() {
 	// Добавление класса _touch для HTML если браузер мобильный
@@ -23,7 +49,7 @@ export function addTouchClass() {
 }
 // Добавление loaded для HTML после полной загрузки страницы
 export function addLoadedClass() {
-	window.addEventListener("load", function () {
+	window.addEventListener('load', function () {
 		setTimeout(function () {
 			document.documentElement.classList.add('loaded');
 		}, 0);
@@ -31,7 +57,9 @@ export function addLoadedClass() {
 }
 // Получение хеша в адресе сайта
 export function getHash() {
-	if (location.hash) { return location.hash.replace('#', ''); }
+	if (location.hash) {
+		return location.hash.replace('#', '');
+	}
 }
 // Указание хеша в адресе сайта
 export function setHash(hash) {
@@ -114,9 +142,9 @@ export function fullVHfix() {
 // 		return _slideUp(target, duration);
 // 	}
 // }
-	// SlideToggle ========================================================================================
+// SlideToggle ========================================================================================
 export let _slideUp = (target, duration = 500) => {
-	domElement(target, changeState)
+	domElement(target, changeState);
 
 	function changeState(target) {
 		target.style.transitionProperty = 'height, margin, padding';
@@ -142,16 +170,15 @@ export let _slideUp = (target, duration = 500) => {
 			target.classList.remove('_slide');
 		}, duration);
 	}
-}
+};
 export let _slideDown = (target, duration = 500) => {
-	domElement(target, changeState)
-	
+	domElement(target, changeState);
+
 	function changeState(target) {
 		target.style.removeProperty('display');
 		let display = window.getComputedStyle(target).display;
-		if (display === 'none')
-			display = 'block';
-	
+		if (display === 'none') display = 'block';
+
 		target.style.display = display;
 		let height = target.offsetHeight;
 		target.style.overflow = 'hidden';
@@ -161,7 +188,7 @@ export let _slideDown = (target, duration = 500) => {
 		target.style.marginTop = 0;
 		target.style.marginBottom = 0;
 		target.offsetHeight;
-		target.style.transitionProperty = "height, margin, padding";
+		target.style.transitionProperty = 'height, margin, padding';
 		target.style.transitionDuration = duration + 'ms';
 		target.style.height = height + 'px';
 		target.style.removeProperty('padding-top');
@@ -176,11 +203,11 @@ export let _slideDown = (target, duration = 500) => {
 			target.classList.remove('_slide');
 		}, duration);
 	}
-}
-export 	let _slideToggle = (target, duration = 500) => {
-	domElement(target, changeState)
+};
+export let _slideToggle = (target, duration = 500) => {
+	domElement(target, changeState);
 
-	function changeState (slide) {
+	function changeState(slide) {
 		if (!slide.classList.contains('_slide')) {
 			slide.classList.add('_slide');
 			if (window.getComputedStyle(slide).display === 'none') {
@@ -190,8 +217,7 @@ export 	let _slideToggle = (target, duration = 500) => {
 			}
 		}
 	}
-	
-}
+};
 //==== Вспомогательные модули блокировки прокрутки и скочка ====================================================================================================================================================================================================================================================================================
 export let bodyLockStatus = true;
 export let bodyLockToggle = (delay = 500) => {
@@ -200,42 +226,44 @@ export let bodyLockToggle = (delay = 500) => {
 	} else {
 		bodyLock(delay);
 	}
-}
+};
 export let bodyUnlock = (delay = 500) => {
-	let body = document.querySelector("body");
+	let body = document.querySelector('body');
 	if (bodyLockStatus) {
-		let lock_padding = document.querySelectorAll("._lp");
+		let lock_padding = document.querySelectorAll('._lp');
 		setTimeout(() => {
 			for (let index = 0; index < lock_padding.length; index++) {
 				const el = lock_padding[index];
 				el.style.paddingRight = '0px';
 			}
 			body.style.paddingRight = '0px';
-			document.documentElement.classList.remove("lock");
+			document.documentElement.classList.remove('lock');
 		}, delay);
 		bodyLockStatus = false;
 		setTimeout(function () {
 			bodyLockStatus = true;
 		}, delay);
 	}
-}
+};
 export let bodyLock = (delay = 500) => {
-	let body = document.querySelector("body");
+	let body = document.querySelector('body');
 	if (bodyLockStatus) {
-		let lock_padding = document.querySelectorAll("._lp");
+		let lock_padding = document.querySelectorAll('._lp');
 		for (let index = 0; index < lock_padding.length; index++) {
 			const el = lock_padding[index];
-			el.style.paddingRight = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
+			el.style.paddingRight =
+				window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
 		}
-		body.style.paddingRight = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
-		document.documentElement.classList.add("lock");
+		body.style.paddingRight =
+			window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
+		document.documentElement.classList.add('lock');
 
 		bodyLockStatus = false;
 		setTimeout(function () {
 			bodyLockStatus = true;
 		}, delay);
 	}
-}
+};
 //==== Модуь работы со спойлерами =======================================================================================================================================================================================================================
 /*
 Для родителя слойлеров пишем атрибут data-spollers
@@ -254,7 +282,7 @@ export function spollers() {
 	if (spollersArray.length > 0) {
 		// Получение обычных слойлеров
 		const spollersRegular = Array.from(spollersArray).filter(function (item, index, self) {
-			return !item.dataset.spollers.split(",")[0];
+			return !item.dataset.spollers.split(',')[0];
 		});
 		// Инициализация обычных слойлеров
 		if (spollersRegular.length > 0) {
@@ -262,30 +290,30 @@ export function spollers() {
 		}
 		// Получение слойлеров с медиа запросами
 		const spollersMedia = Array.from(spollersArray).filter(function (item, index, self) {
-			return item.dataset.spollers.split(",")[0];
+			return item.dataset.spollers.split(',')[0];
 		});
 		// Инициализация слойлеров с медиа запросами
 		if (spollersMedia.length > 0) {
 			const breakpointsArray = [];
-			spollersMedia.forEach(item => {
+			spollersMedia.forEach((item) => {
 				const params = item.dataset.spollers;
 				const breakpoint = {};
-				const paramsArray = params.split(",");
+				const paramsArray = params.split(',');
 				breakpoint.value = paramsArray[0];
-				breakpoint.type = paramsArray[1] ? paramsArray[1].trim() : "max";
+				breakpoint.type = paramsArray[1] ? paramsArray[1].trim() : 'max';
 				breakpoint.item = item;
 				breakpointsArray.push(breakpoint);
 			});
 			// Получаем уникальные брейкпоинты
 			let mediaQueries = breakpointsArray.map(function (item) {
-				return '(' + item.type + "-width: " + item.value + "px)," + item.value + ',' + item.type;
+				return '(' + item.type + '-width: ' + item.value + 'px),' + item.value + ',' + item.type;
 			});
 			mediaQueries = mediaQueries.filter(function (item, index, self) {
 				return self.indexOf(item) === index;
 			});
 			// Работаем с каждым брейкпоинтом
-			mediaQueries.forEach(breakpoint => {
-				const paramsArray = breakpoint.split(",");
+			mediaQueries.forEach((breakpoint) => {
+				const paramsArray = breakpoint.split(',');
 				const mediaBreakpoint = paramsArray[1];
 				const mediaType = paramsArray[2];
 				const matchMedia = window.matchMedia(paramsArray[0]);
@@ -296,7 +324,7 @@ export function spollers() {
 					}
 				});
 				// Событие
-				matchMedia.addEventListener("change", function () {
+				matchMedia.addEventListener('change', function () {
 					initSpollers(spollersArray, matchMedia);
 				});
 				initSpollers(spollersArray, matchMedia);
@@ -304,16 +332,16 @@ export function spollers() {
 		}
 		// Инициализация
 		function initSpollers(spollersArray, matchMedia = false) {
-			spollersArray.forEach(spollersBlock => {
+			spollersArray.forEach((spollersBlock) => {
 				spollersBlock = matchMedia ? spollersBlock.item : spollersBlock;
 				if (matchMedia.matches || !matchMedia) {
 					spollersBlock.classList.add('_spoller-init');
 					initSpollerBody(spollersBlock);
-					spollersBlock.addEventListener("click", setSpollerAction);
+					spollersBlock.addEventListener('click', setSpollerAction);
 				} else {
 					spollersBlock.classList.remove('_spoller-init');
 					initSpollerBody(spollersBlock, false);
-					spollersBlock.removeEventListener("click", setSpollerAction);
+					spollersBlock.removeEventListener('click', setSpollerAction);
 				}
 			});
 		}
@@ -321,7 +349,7 @@ export function spollers() {
 		function initSpollerBody(spollersBlock, hideSpollerBody = true) {
 			const spollerTitles = spollersBlock.querySelectorAll('[data-spoller]');
 			if (spollerTitles.length > 0) {
-				spollerTitles.forEach(spollerTitle => {
+				spollerTitles.forEach((spollerTitle) => {
 					if (hideSpollerBody) {
 						spollerTitle.removeAttribute('tabindex');
 						if (!spollerTitle.classList.contains('_spoller-active')) {
@@ -345,7 +373,10 @@ export function spollers() {
 						hideSpollersBody(spollersBlock);
 					}
 					spollerTitle.classList.toggle('_spoller-active');
-					_slideToggle(spollerTitle.nextElementSibling, spollersBlock.dataset.duration ? spollersBlock.dataset.duration : 500);
+					_slideToggle(
+						spollerTitle.nextElementSibling,
+						spollersBlock.dataset.duration ? spollersBlock.dataset.duration : 500
+					);
 				}
 				//e.preventDefault();
 			}
@@ -354,7 +385,10 @@ export function spollers() {
 			const spollerActiveTitle = spollersBlock.querySelector('[data-spoller]._spoller-active');
 			if (spollerActiveTitle) {
 				spollerActiveTitle.classList.remove('_spoller-active');
-				_slideUp(spollerActiveTitle.nextElementSibling, spollersBlock.dataset.duration ? spollersBlock.dataset.duration : 500);
+				_slideUp(
+					spollerActiveTitle.nextElementSibling,
+					spollersBlock.dataset.duration ? spollersBlock.dataset.duration : 500
+				);
 			}
 		}
 	}
@@ -385,7 +419,7 @@ export function tabs() {
 		tabs.forEach((tabsBlock, index) => {
 			tabsBlock.classList.add('_tab-init');
 			tabsBlock.setAttribute('data-tabs-index', index);
-			tabsBlock.addEventListener("click", setTabsAction);
+			tabsBlock.addEventListener('click', setTabsAction);
 			initTabs(tabsBlock);
 		});
 
@@ -401,7 +435,7 @@ export function tabs() {
 	// Инициализация табов с медиа запросами
 	function initMediaTabs(tabsMedia) {
 		const breakpointsArray = [];
-		tabsMedia.forEach(item => {
+		tabsMedia.forEach((item) => {
 			const breakpointValue = item.dataset.tabs;
 
 			const tabsBreakpointsObject = {};
@@ -420,8 +454,8 @@ export function tabs() {
 		});
 
 		// Работаем с каждым брейкпоинтом
-		mediaQueries.forEach(breakpoint => {
-			const paramsArray = breakpoint.split(",");
+		mediaQueries.forEach((breakpoint) => {
+			const paramsArray = breakpoint.split(',');
 			const matchMedia = window.matchMedia(paramsArray[0]);
 			const mediaBreakpoint = paramsArray[1];
 
@@ -433,7 +467,7 @@ export function tabs() {
 			});
 
 			// Событие
-			matchMedia.addEventListener("change", function () {
+			matchMedia.addEventListener('change', function () {
 				setTitlePosition(tabsMediaArray, matchMedia);
 			});
 			setTitlePosition(tabsMediaArray, matchMedia);
@@ -441,7 +475,7 @@ export function tabs() {
 	}
 	// Установка позиций заголовков
 	function setTitlePosition(tabsMediaArray, matchMedia) {
-		tabsMediaArray.forEach(tabsMediaItem => {
+		tabsMediaArray.forEach((tabsMediaItem) => {
 			tabsMediaItem = tabsMediaItem.item;
 			const tabsTitles = tabsMediaItem.querySelector('[data-tabs-titles]');
 			const tabsTitleItems = tabsMediaItem.querySelectorAll('[data-tabs-title]');
@@ -520,8 +554,10 @@ export function tabs() {
 		if (el.closest('[data-tabs-title]') || el.hasAttribute('[data-tabs-title]')) {
 			const tabTitle = el;
 			const tabsBlock = tabTitle.closest('[data-tabs]');
-			if (!tabTitle.classList.contains('_tab-active') && !tabsBlock.querySelectorAll('._slide').length) {
-
+			if (
+				!tabTitle.classList.contains('_tab-active') &&
+				!tabsBlock.querySelectorAll('._slide').length
+			) {
 				const tabActiveTitle = tabsBlock.querySelector('[data-tabs-title]._tab-active');
 				if (tabActiveTitle) {
 					tabActiveTitle.classList.remove('_tab-active');
@@ -541,20 +577,18 @@ export function tabs() {
 Документация плагина:
 Сниппет (HTML): 
 */
-export function showMore() {
-
-}
+export function showMore() {}
 //================================================================================================================================================================================================================================================================================================================
 // Прочие полезные функции ================================================================================================================================================================================================================================================================================================================
 //================================================================================================================================================================================================================================================================================================================
 
 // Получить цифры из строки
 export function getDigFromString(item) {
-	return parseInt(item.replace(/[^\d]/g, ''))
+	return parseInt(item.replace(/[^\d]/g, ''));
 }
 // Форматирование цифр типа 100 000 000
 export function getDigFormat(item) {
-	return item.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 ");
+	return item.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
 }
 // Уникализация массива
 export function uniqArray(array) {
@@ -566,64 +600,77 @@ export function uniqArray(array) {
 export function setPhoneMask() {
 	const phoneInputs = document.querySelectorAll('input[data-phone-mask]');
 
-	if(phoneInputs) {
-		phoneInputs.forEach(phoneInput => {
+	if (phoneInputs) {
+		phoneInputs.forEach((phoneInput) => {
 			if (phoneInput) {
 				//'+7(999) 999 9999'
 				//'+38(999) 999 9999'
 				//'+375(99)999-99-99'
 				phoneInput.classList.add('_mask');
-				Inputmask("+380 999 999 999", {
+				Inputmask('+380 999 999 999', {
 					showMaskOnHover: false,
 					clearIncomplete: true,
 					clearMaskOnLostFocus: true,
 					onincomplete: function () {
 						phoneInput.inputmask.remove();
-						phoneInput.value = ''
+						phoneInput.value = '';
 					}
 				}).mask(phoneInput);
 
 				phoneInput.addEventListener('blur', () => {
-					phoneInput.placeholder = ''
-				})
+					phoneInput.placeholder = '';
+				});
 			}
-		})
+		});
 	}
 }
 
 export function setDateMask() {
 	const phoneInputs = document.querySelectorAll('input[data-date-mask]');
 
-	if(phoneInputs) {
-		phoneInputs.forEach(dateInput => {
+	if (phoneInputs) {
+		phoneInputs.forEach((dateInput) => {
 			if (dateInput) {
 				datepicker(dateInput, {
-					customDays: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
-					customMonths: ["Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"],
+					customDays: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+					customMonths: [
+						'Янв',
+						'Фев',
+						'Мар',
+						'Апр',
+						'Май',
+						'Июн',
+						'Июл',
+						'Авг',
+						'Сен',
+						'Окт',
+						'Ноя',
+						'Дек'
+					],
 					formatter: (input, date, instance) => {
-						const value = date.toLocaleDateString()
-						input.value = value
+						const value = date.toLocaleDateString();
+						input.value = value;
 					},
 					onSelect: function (input, instance, date) {
 						input_focus_add(input.el);
 					}
 				});
 			}
-		})
+		});
 	}
 }
 //============================================================================================================================
 
-// Tabs ===============================================================================================		
+// Tabs ===============================================================================================
 export function tabsAdaptive() {
-	let tabs = document.querySelectorAll("._tabs");
+	let tabs = document.querySelectorAll('._tabs');
 	for (let index = 0; index < tabs.length; index++) {
 		let tab = tabs[index];
-		let tabs_items = tab.querySelectorAll("._tabs-item");
-		let tabs_blocks = tab.querySelectorAll("._tabs-block");
+		let tabs_items = tab.querySelectorAll('._tabs-item');
+		let tabs_blocks = tab.querySelectorAll('._tabs-block');
 		for (let index = 0; index < tabs_items.length; index++) {
 			let tabs_item = tabs_items[index];
-			tabs_item.addEventListener("click", function (e) {
+			tabs_item.addEventListener('click', function (e) {
 				for (let index = 0; index < tabs_items.length; index++) {
 					let tabs_item = tabs_items[index];
 					tabs_item.classList.remove('_active');
@@ -636,16 +683,16 @@ export function tabsAdaptive() {
 		}
 	}
 
-	const matchMedia = window.matchMedia('(max-width: 768px)')
+	const matchMedia = window.matchMedia('(max-width: 768px)');
 
 	matchMedia.addListener(function () {
 		init(matchMedia);
 	});
-	init(matchMedia)
-	
+	init(matchMedia);
+
 	function init(matchMedia = false) {
 		if (matchMedia.matches || !matchMedia) {
-			tabsMobileBody()
+			tabsMobileBody();
 		}
 	}
 
@@ -654,74 +701,73 @@ export function tabsAdaptive() {
 		for (let index = 0; index < tabsMobile.length; index++) {
 			let tab = tabsMobile[index];
 			let value = tab.querySelector('.tabs-mobile__value');
-			let tabs_items = tab.querySelectorAll("._tabs-item");
-			let item_active = tab.querySelector("._tabs-item._active");
+			let tabs_items = tab.querySelectorAll('._tabs-item');
+			let item_active = tab.querySelector('._tabs-item._active');
 			let tabs_nav = tab.querySelector('.tabs-block__nav');
-			value.innerHTML = item_active.innerHTML
-	
-			value.addEventListener("click", () => {
-				value.classList.toggle('_active')
+			value.innerHTML = item_active.innerHTML;
+
+			value.addEventListener('click', () => {
+				value.classList.toggle('_active');
 				_slideToggle(tabs_nav);
-			})
-	
+			});
+
 			for (let index = 0; index < tabs_items.length; index++) {
 				let tabs_item = tabs_items[index];
 
 				const clickHandler = () => {
-					let item_active = tab.querySelector("._tabs-item._active");
+					let item_active = tab.querySelector('._tabs-item._active');
 					value.innerHTML = item_active.innerHTML;
 					if (matchMedia.matches || !matchMedia) {
-						_slideUp(tabs_nav);		
-					}		
-				}
-				
-				tabs_item.addEventListener("click", clickHandler);
+						_slideUp(tabs_nav);
+					}
+				};
+
+				tabs_item.addEventListener('click', clickHandler);
 			}
 		}
 	}
-
 }
 // ====================================================================================================
 
 // FLOAT FORM LABEL ===================================================================================
 export function setFloatLabels() {
-	const floatLabels = document.querySelectorAll('[data-float-label]')
+	const floatLabels = document.querySelectorAll('[data-float-label]');
 
 	const init = (el) => {
-		floatLabels.forEach(label => {
-			const element = label.querySelector(`${el}`)
-			const contentName = label.querySelector('.content-name')
-	
-			if(element && element.value) {
-				contentName.classList.add('_active')
-			}
-	
-			if(element) {
-				element.addEventListener('focus', () => {
-					contentName.classList.add('_active')
-				})
-				element.addEventListener('blur', () => {
-					if(!element.value) {
-						contentName.classList.remove('_active')
-					} else {
-						contentName.classList.add('_active')
-					}
-				})
-			}
-		})
-	}
+		floatLabels.forEach((label) => {
+			const element = label.querySelector(`${el}`);
+			const contentName = label.querySelector('.content-name');
 
-	init('input')
-	init('textarea')
+			if (element && element.value) {
+				contentName.classList.add('_active');
+			}
+
+			if (element) {
+				element.addEventListener('focus', () => {
+					contentName.classList.add('_active');
+				});
+				element.addEventListener('blur', () => {
+					if (!element.value) {
+						contentName.classList.remove('_active');
+					} else {
+						contentName.classList.add('_active');
+					}
+				});
+			}
+		});
+	};
+
+	init('input');
+	init('textarea');
 }
 // ====================================================================================================
 
 // INPUT TYPE FILE ===================================================================================
 export function setFileInputs() {
-	const fileInputs = document.querySelectorAll('[data-input-file]') 
+	const fileInputs = document.querySelectorAll('[data-input-file]');
 
-	if(fileInputs.length > 0) {
-		for(let i = 0; i < fileInputs.length; i++) {
+	if (fileInputs.length > 0) {
+		for (let i = 0; i < fileInputs.length; i++) {
 			const fileInputContainer = fileInputs[i];
 			const inputFile = fileInputContainer.querySelector('input');
 			const filePreview = fileInputContainer.querySelector('.message-text');
@@ -729,31 +775,38 @@ export function setFileInputs() {
 			const fileError = fileInputContainer.querySelector('.file__error');
 			const maxSizeError = inputFile.getAttribute('data-error-max-size');
 			const placeholder = inputFile.getAttribute('data-placeholder');
-			if(filePreview && placeholder) filePreview.innerHTML = placeholder
-	
-			inputFile && inputFile.addEventListener('change', () => {
-				fileInputContainer.querySelectorAll('.file-tag').forEach(tag => tag.style.display = 'none');
-				uploadFile(inputFile.files);
-			});
-	
+			if (filePreview && placeholder) filePreview.innerHTML = placeholder;
+
+			inputFile &&
+				inputFile.addEventListener('change', () => {
+					fileInputContainer
+						.querySelectorAll('.file-tag')
+						.forEach((tag) => (tag.style.display = 'none'));
+					uploadFile(inputFile.files);
+				});
+
 			function uploadFile(files) {
-				if(fileError && maxSizeError && inputFile) {
+				if (fileError && maxSizeError && inputFile) {
 					fileError.innerHTML = '';
 				}
 
 				Array.from(files).forEach((file, i, arr) => {
 					if (!arr.includes(file)) {
-						return
+						return;
 					}
-					if (!['application/pdf', 'image/png', 'image/jpeg', 'application/msword'].includes(file.type)) {
-						if(inputFile) {
+					if (
+						!['application/pdf', 'image/png', 'image/jpeg', 'application/msword'].includes(
+							file.type
+						)
+					) {
+						if (inputFile) {
 							inputFile.value = '';
 						}
 						return;
 					}
 					// проверим размер файла (<2 Мб)
 					if (file.size > 2 * 1024 * 1024) {
-						if(fileError && maxSizeError && inputFile) {
+						if (fileError && maxSizeError && inputFile) {
 							fileError.innerHTML = maxSizeError;
 							inputFile.value = '';
 						}
@@ -762,45 +815,44 @@ export function setFileInputs() {
 					const fileTag = document.createElement('div');
 					const closeTag = document.createElement('img');
 					closeTag.src = 'img/interface/file-cross.svg';
-					closeTag.classList.add('close-tag')
+					closeTag.classList.add('close-tag');
 					fileTag.classList.add('file-tag');
 					fileTag.innerHTML = file.name;
 					fileTag.insertAdjacentElement('beforeend', closeTag);
 					fileTags.insertAdjacentElement('beforeend', fileTag);
 					closeTag.onclick = () => {
-						if(inputFile.value) {
+						if (inputFile.value) {
 							inputFile.value = '';
 						}
 						fileTag.style.display = 'none';
 					};
-				})
-			
+				});
 			}
 		}
 	}
 }
 // ====================================================================================================
 
-export function isTarget (eventTarget, target) {
-	let $target
+export function isTarget(eventTarget, target) {
+	let $target;
 	if (typeof target === 'string') {
-		$target = document.querySelector(target)
+		$target = document.querySelector(target);
 	}
 	if ($target === eventTarget) {
-		return $target
+		return $target;
 	} else if (eventTarget.closest(target)) {
-		return eventTarget.closest(target)
+		return eventTarget.closest(target);
 	} else {
-		return false
+		return false;
 	}
 }
 
 export function removeClasses(array, className) {
-	let $array
+	let $array;
 	if (typeof array === 'string') {
-		$array = document.querySelectorAll(array)
+		$array = document.querySelectorAll(array);
 	} else {
-		$array = array
+		$array = array;
 	}
 	for (var i = 0; i < $array.length; i++) {
 		$array[i].classList.remove(className);
@@ -809,29 +861,38 @@ export function removeClasses(array, className) {
 
 export function domElement(target, callback) {
 	if (target instanceof NodeList) {
-		target.forEach(el => callback(el))
+		target.forEach((el) => callback(el));
 	} else if (target instanceof Array) {
-		Array.from(target).forEach(el => callback(el))
+		Array.from(target).forEach((el) => callback(el));
 	} else if (typeof target === 'string') {
-		const $target = document.querySelectorAll(target)
+		const $target = document.querySelectorAll(target);
 
-		if($target instanceof NodeList) {
-			$target.forEach(el => callback(el))
+		if ($target instanceof NodeList) {
+			$target.forEach((el) => callback(el));
 		} else {
-			callback($target)
+			callback($target);
 		}
 	} else {
-		callback(target)
+		callback(target);
 	}
 }
 
 export function debounce(func, delay) {
 	let clearTimer;
-	return function() {
+	return function () {
 		const context = this;
 		const args = arguments;
 		clearTimeout(clearTimer);
 		clearTimer = setTimeout(() => func.apply(context, args), delay);
-	}
+	};
 }
 
+export function addLottieAnimation(domElement = '', path = '', loopStatus = false, play = true) {
+	const animation = bodymovin.loadAnimation({
+		container: document.querySelector(`${domElement}`),
+		path: `${path}`,
+		renderer: 'svg',
+		loop: loopStatus,
+		autoplay: play
+	});
+}

@@ -62,7 +62,6 @@ export const documentClick = (e) => {
     }
     const $menuOverlay = functions.isTarget(targetElement, '[data-menu-overlay]')
     if($menuOverlay) {
-        console.log('fwef')
         if($pageMenu.classList.contains('js-open')) {
             $pageMenu.classList.remove('js-open');
             $pageMenuBtn.classList.remove('js-open');

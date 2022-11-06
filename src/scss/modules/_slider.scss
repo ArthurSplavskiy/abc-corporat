@@ -63,4 +63,23 @@
       }
     }
   }
+  &-big {
+    grid-template-columns: 64px 64px;
+    button {
+      width: 64px;
+      height: 64px;
+    }
+  }
+  &-color-reverse {
+    button {
+      background: transparent;
+      border-color: white;
+      svg {
+        fill: white;
+      }
+      &:hover {
+        border-color: $main-blue;
+      }
+    }
+  }
 }

@@ -1,4 +1,6 @@
 //common uses selectors
+import {debounce} from "../utils/functions.js";
+
 let el = {
   header      : $('header'),
   preloader   : $('.preloader'),
@@ -273,16 +275,18 @@ function funPreloader() {
 
 $(window).on('load', function () {  //after full load
   //hide preloader after load
-  if (!el.preloader.hasClass(el.preloaderCl)) funPreloader();
+  if (!el.preloader.hasClass(el.preloaderCl)) {
+    setTimeout(funPreloader, 4000)
+  }
 });
 
 el.document.ready(function () {
   "use strict";
 
   //preloader show time limit after document ready
-  setTimeout(function () {
-    if (!el.preloader.hasClass(el.preloaderCl)) funPreloader();
-  }, 3000);
+  // setTimeout(function () {
+  //   if (!el.preloader.hasClass(el.preloaderCl)) funPreloader();
+  // }, 3000);
 
   document.body.classList.add((
     "ontouchstart" in document.documentElement
@@ -353,6 +357,43 @@ el.document.ready(function () {
     _this.next().slideToggle();
   });
 
+  function setAnimationOnMenuButtonCircle () {
+    window.removeEventListener('scroll', onScroll);
+
+    let circle;
+
+    if(window.innerWidth < 768) {
+      circle = document.querySelector('.progress-circle-mobile');
+    } else {
+      circle = document.querySelector('.progress-circle');
+    }
+
+    const radius = circle.r.baseVal.value;
+    const circumference = 2 * Math.PI * radius;
+
+    circle.style.strokeDasharray = `${circumference} ${circumference}`;
+    circle.style.strokeDashoffset = circumference;
+
+    function setProgress(percent) {
+      const offset = circumference - percent / 100 * circumference;
+      circle.style.strokeDashoffset = offset;
+    }
+
+    setProgress(0);
+
+    function onScroll() {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      setProgress(scrolled);
+    }
+
+    window.addEventListener('scroll', onScroll);
+  }
+
+  setAnimationOnMenuButtonCircle = debounce(setAnimationOnMenuButtonCircle, 250);
+  setAnimationOnMenuButtonCircle();
+  window.addEventListener('resize', setAnimationOnMenuButtonCircle);
 
   function menuFix() {
     if (pageYOffset > 0) el.header.addClass('_down');
