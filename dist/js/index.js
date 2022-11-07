@@ -4,6 +4,7 @@ import './core/modules/animation.js';
 import './core/modules/sliders.js';
 import './core/forms/select.js';
 import './core/modules/hoverTabs.js';
+import './core/modules/map.js';
 import '../scss/style.scss';
 import { documentClick } from './core/events/click.js';
 import ScrollObserver from './core/utils/observer.js';

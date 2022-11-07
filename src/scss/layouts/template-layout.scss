@@ -1,4 +1,7 @@
 .p-template {
+	.s-hero {
+		overflow: hidden;
+	}
 	.s-hero-content {
 		padding-top: rem(128);
 		@media (max-width: $mobile) {
