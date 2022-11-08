@@ -5,6 +5,12 @@
     p {
       color: #585C62;
     }
+    .product-cart-link {
+      color: $main-blue;
+      svg {
+        stroke: $main-blue;
+      }
+    }
   }
   &:hover {
     & > * {
@@ -13,6 +19,14 @@
     &:before {
       transform: scale(1);
       opacity: 1;
+    }
+    &.text-grey {
+      .product-cart-link {
+        color: white;
+        svg {
+          stroke: white;
+        }
+      }
     }
   }
   &:before {

@@ -1,6 +1,7 @@
 .s-hover-tabs {
   padding: 80px 0 104px 0;
   background: white;
+  overflow: hidden;
   @media(max-width: $mobile) {
     padding: 40px 0;
   }
@@ -55,38 +56,39 @@
         z-index: 2;
       }
 
-      &:after, &:before {
-        content: '';
-        position: absolute;
-        opacity: 0;
-        background: $main-blue;
-        border-radius: 10px;
-        z-index: 1;
-      }
-      &:after {
-        width: 104%;
-        height: 104%;
-        top: -2%;
-        left: -2%;
-        right: 0;
-      }
-      &:before {
-        width: 90px;
-        height: 120%;
-        position: absolute;
-        top:0;
-        right: -2%;
-        @media(max-width: $mobile) {
-          width: 70px;
-        }
-      }
+      //&:after, &:before {
+      //  content: '';
+      //  position: absolute;
+      //  opacity: 0;
+      //  background: $main-blue;
+      //  border-radius: 10px;
+      //  z-index: 1;
+      //}
+      //&:after {
+      //  width: 104%;
+      //  height: 104%;
+      //  top: -2%;
+      //  left: -2%;
+      //  right: 0;
+      //}
+      //&:before {
+      //  width: 90px;
+      //  height: 120%;
+      //  position: absolute;
+      //  top:0;
+      //  right: -2%;
+      //  @media(max-width: $mobile) {
+      //    width: 70px;
+      //  }
+      //}
       &.js-active {
         padding-left: 18px;
         padding-right: 18px;
         color: white;
-        &:after, &:before {
-          opacity: 1;
-        }
+        background: $main-blue;
+        //&:after, &:before {
+        //  opacity: 1;
+        //}
         svg {
           stroke: white;
         }
@@ -127,8 +129,10 @@
         display: block;
       }
       &.js-show > * {
-        transform: scale(1);
-        animation: tabFadeIn 0.7s ease-out forwards;
+        animation: tabFadeIn 0.2s ease-out forwards;
+      }
+      &.js-hide > * {
+        animation: tabFadeOut 0.2s ease-out forwards;
       }
     }
   }
@@ -136,11 +140,22 @@
 
 @keyframes tabFadeIn {
   from {
-    transform: scale(0.6);
+    transform: scale(0.9);
     opacity: 0;
   }
   to {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+@keyframes tabFadeOut {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.9);
+    opacity: 0;
   }
 }

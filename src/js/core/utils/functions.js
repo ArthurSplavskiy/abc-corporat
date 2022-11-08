@@ -764,69 +764,50 @@ export function setFloatLabels() {
 
 // INPUT TYPE FILE ===================================================================================
 export function setFileInputs() {
-	const fileInputs = document.querySelectorAll('[data-input-file]');
+	const fileInputs = document.querySelectorAll('[data-input-file]')
 
-	if (fileInputs.length > 0) {
-		for (let i = 0; i < fileInputs.length; i++) {
+	if(fileInputs.length > 0) {
+		for(let i = 0; i < fileInputs.length; i++) {
 			const fileInputContainer = fileInputs[i];
 			const inputFile = fileInputContainer.querySelector('input');
+			const fileButton = fileInputContainer.querySelector('.icon-pin');
 			const filePreview = fileInputContainer.querySelector('.message-text');
-			const fileTags = fileInputContainer.querySelector('.file__tags');
-			const fileError = fileInputContainer.querySelector('.file__error');
 			const maxSizeError = inputFile.getAttribute('data-error-max-size');
 			const placeholder = inputFile.getAttribute('data-placeholder');
-			if (filePreview && placeholder) filePreview.innerHTML = placeholder;
+			filePreview.innerHTML = placeholder
 
-			inputFile &&
-				inputFile.addEventListener('change', () => {
-					fileInputContainer
-						.querySelectorAll('.file-tag')
-						.forEach((tag) => (tag.style.display = 'none'));
-					uploadFile(inputFile.files);
-				});
+			// remove file preview
+			fileButton.onclick = () => {
+				if(inputFile.classList.contains('full')) {
+					inputFile.classList.remove('full')
+					inputFile.value = '';
+					filePreview.innerHTML = placeholder
+				}
+			};
 
-			function uploadFile(files) {
-				if (fileError && maxSizeError && inputFile) {
-					fileError.innerHTML = '';
+			inputFile.addEventListener('change', () => {
+				//form_remove_error(inputFile);
+				uploadFile(inputFile.files[0]);
+			});
+
+			function uploadFile(file) {
+
+				if (!['application/pdf', 'image/png', 'application/msword'].includes(file.type)) {
+					//form_add_error(inputFile)
+					inputFile.value = '';
+					return;
 				}
 
-				Array.from(files).forEach((file, i, arr) => {
-					if (!arr.includes(file)) {
-						return;
-					}
-					if (
-						!['application/pdf', 'image/png', 'image/jpeg', 'application/msword'].includes(
-							file.type
-						)
-					) {
-						if (inputFile) {
-							inputFile.value = '';
-						}
-						return;
-					}
-					// проверим размер файла (<2 Мб)
-					if (file.size > 2 * 1024 * 1024) {
-						if (fileError && maxSizeError && inputFile) {
-							fileError.innerHTML = maxSizeError;
-							inputFile.value = '';
-						}
-						return;
-					}
-					const fileTag = document.createElement('div');
-					const closeTag = document.createElement('img');
-					closeTag.src = 'img/interface/file-cross.svg';
-					closeTag.classList.add('close-tag');
-					fileTag.classList.add('file-tag');
-					fileTag.innerHTML = file.name;
-					fileTag.insertAdjacentElement('beforeend', closeTag);
-					fileTags.insertAdjacentElement('beforeend', fileTag);
-					closeTag.onclick = () => {
-						if (inputFile.value) {
-							inputFile.value = '';
-						}
-						fileTag.style.display = 'none';
-					};
-				});
+				// проверим размер файла (<2 Мб)
+				if (file.size > 2 * 1024 * 1024) {
+					//form_add_error(inputFile)
+					fileInputContainer.querySelector('.form__error').innerHTML = maxSizeError;
+					inputFile.value = '';
+					return;
+				}
+
+				inputFile.classList.add('full')
+				filePreview.innerHTML = file.name
 			}
 		}
 	}

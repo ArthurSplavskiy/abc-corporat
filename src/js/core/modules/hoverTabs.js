@@ -4,16 +4,22 @@ function setHoverTabs(event) {
     let tabLinks = document.querySelectorAll('[data-tab-link]');
 
     for (let i = 0; i < tabContents.length; i++) {
-        tabContents[i].style.display = 'none';
+        tabContents[i].classList.add("js-hide");
+        setTimeout(() => {
+            tabContents[i].style.display = 'none';
+            tabLinks[i].classList.remove("js-active");
+        }, 200)
         tabContents[i].classList.remove("js-show");
-    }
-    for (let i = 0; i < tabLinks.length; i++) {
         tabLinks[i].classList.remove("js-active");
     }
 
-    document.querySelector(`[data-tab-link='${tabID}']`).classList.add("js-active");
-    document.querySelector(`[data-tab-content='${tabID}']`).classList.add("js-show");
-    document.querySelector(`[data-tab-content='${tabID}']`).style.display = 'block';
+    setTimeout(() => {
+        document.querySelector(`[data-tab-link='${tabID}']`).classList.add("js-active");
+        document.querySelector(`[data-tab-content='${tabID}']`).classList.add("js-show");
+        document.querySelector(`[data-tab-content='${tabID}']`).style.display = 'block';
+        document.querySelector(`[data-tab-content='${tabID}']`).classList.remove("js-hide");
+    }, 200)
+
 }
 
 let tabLinks = document.querySelectorAll('[data-tab-link]');

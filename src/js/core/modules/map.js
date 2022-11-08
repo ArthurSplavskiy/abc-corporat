@@ -1,4 +1,7 @@
-const API_KEY = 'AIzaSyAfahmLh-T7Flt1gWoqpa9_Ti836FW7nZo';
+const API_KEY = 'AIzaSyBiQ_-A9znDY05FsF5AOhio-367qwSKQDM';
+const LAT = 50.3965621;
+const LNG = 30.5312652;
+const ZOOM = 17.65;
 
 function initMap(n = 1) {
     google.maps.Map.prototype.setCenterWithOffset = function (latlng, offsetX, offsetY) {
@@ -20,13 +23,13 @@ function initMap(n = 1) {
         //pixelOffset: new google.maps.Size(-230,250)
     });
     var locations = [
-        [new google.maps.LatLng(59.3895139, 15.7534716)],
-        [new google.maps.LatLng(53.700055, 27.5513694)],
-        [new google.maps.LatLng(53.809055, 27.5813694)],
-        [new google.maps.LatLng(53.859055, 27.5013694)],
+        [new google.maps.LatLng(LAT, LNG)],
+        // [new google.maps.LatLng(53.700055, 27.5513694)],
+        // [new google.maps.LatLng(53.809055, 27.5813694)],
+        // [new google.maps.LatLng(53.859055, 27.5013694)],
     ]
     var options = {
-        zoom: 10,
+        zoom: ZOOM,
         panControl: false,
         mapTypeControl: false,
         center: locations[0][0],
@@ -36,7 +39,7 @@ function initMap(n = 1) {
     };
     var map = new google.maps.Map(document.getElementById('map'), options);
     var icon = {
-        url: 'img/interface/map-marker.png',
+        url: '', //img/interface/map-marker.png
         scaledSize: new google.maps.Size(18, 20),
         anchor: new google.maps.Point(9, 10)
     }
@@ -54,8 +57,11 @@ function initMap(n = 1) {
                 var cnt = i + 1;
                 //infowindow.setContent(document.querySelector('.events-map__item_' + cnt).innerHTML);
                 //infowindow.open(map, marker);
-                marker.setIcon(icon);
-                map.setCenterWithOffset(marker.getPosition(), 0, 0);
+
+
+                //MARKER
+                //marker.setIcon(icon);
+                //map.setCenterWithOffset(marker.getPosition(), 0, 0);
                 setTimeout(function () {
 
                 }, 10);
