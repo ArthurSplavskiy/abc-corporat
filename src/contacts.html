@@ -41,11 +41,7 @@
 							<div class="s-hero-descr page-text" data-an="_fadeUp">
 								Within 22 years of our experience, we have worked for over 200 global clients helping them solve their business problems and digitally transform their organisation.
 							</div>
-							<a
-								href="next-section"
-								class="s-hero-anchor"
-								data-lottie="hero-anchor"
-								data-anchor="next-section"></a>
+							@@include('html/_anchor.htm',{})
 						</div>
 					</div>
 				</section>
@@ -54,7 +50,7 @@
 						<div class="s-contacts-content" data-an="_fadeIn">
 							<h2 class="page-title">коНТАКТИ</h2>
 							<div class="s-contacts-grid">
-								<div class="s-contacts-img" data-an="_fadeIn">
+								<div class="s-contacts-img img-animate" data-an="_fadeIn">
 									<img src="img/04.png" alt="abc" />
 								</div>
 								<form class="callback-form" action="#">
@@ -107,7 +103,7 @@
 						</div>
 					</div>
 				</section>
-				<div id="map"></div>
+				<div id="map" data-an="_fadeIn"></div>
 			</main>
 			@@include('html/_footer.htm',{}) @@include('html/_js.htm',{})
 		</div>

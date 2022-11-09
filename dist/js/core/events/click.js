@@ -1,8 +1,8 @@
 import * as functions from "../utils/functions.js";
 import {popup} from "../modules/popup.js";
-import {_slideUp, _slideDown, bodyLockStatus, bodyLockToggle} from "../utils/functions.js";
+import {_slideUp, _slideDown, bodyLockStatus, bodyLockToggle, bodyUnlock} from "../utils/functions.js";
 
-const $popupMedia = document.querySelector('#popup-media');
+const $popupCV = document.querySelector('#popup-cv');
 const $menusSecondLvl = document.querySelectorAll('[data-second-lvl]');
 const $pageMenu = document.querySelector('[data-menu]');
 const $pageMenuBtn = document.querySelector('[data-menu-btn]');
@@ -11,27 +11,25 @@ export const documentClick = (e) => {
     const targetElement = e.target;
 
     // POPUP ===================
-    const $popupTriggerOpen = functions.isTarget(targetElement, '[data-popup-open="media"]');
+    const $popupTriggerOpen = functions.isTarget(targetElement, '[data-popup-open="cv"]');
     if($popupTriggerOpen) {
-        $popupMedia && popup.open('#popup-media');
-    }
-
-    if(targetElement.closest('.popup__close')) {
-        popup.close(e, '.popup__close');
-        if($popupMedia.getAttribute('id') === 'popup-media') {
-            const $media = $popupMedia.querySelector('video') || $popupMedia.querySelector('iframe');
-
-            if ($media.nodeName === 'IFRAME') {
-                const iframeSrc = $media.src;
-                $media.src = iframeSrc;
-            }
-            if ($media.nodeName === 'VIDEO') {
-                $media.pause();
-            }
+        $popupCV && popup.open('#popup-cv');
+        if (bodyLockStatus) {
+            bodyLockToggle();
         }
     }
-    if(targetElement.closest('.popup') && !targetElement.closest('.popup__content')) {
+
+    if(targetElement.closest('.popup-close')) {
+        popup.close(e, '.popup-close');
+        if (bodyLockStatus) {
+            bodyUnlock();
+        }
+    }
+    if(targetElement.closest('.popup') && !targetElement.closest('.popup-content')) {
         popup.close(e, '.popup');
+        if (bodyLockStatus) {
+            bodyUnlock();
+        }
     }
     // ===================
 
@@ -67,8 +65,5 @@ export const documentClick = (e) => {
             $pageMenuBtn.classList.remove('js-open');
         }
     }
-    // ===================
-
-    // ===================
     // ===================
 };

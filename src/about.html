@@ -48,11 +48,7 @@
 									<li data-an="_fadeLt20" data-del="0.6">-СЕРТИФІКАТИ</li>
 								</ul>
 							</div>
-							<a
-								href="next-section"
-								class="s-hero-anchor"
-								data-lottie="hero-anchor"
-								data-anchor="next-section"></a>
+							@@include('html/_anchor.htm',{})
 							<span class="s-hero-vertical-text"> it SECURE SOFT COMMUNICATION </span>
 						</div>
 					</div>
@@ -62,19 +58,19 @@
 					<div class="container">
 						<article class="s-article-row">
 							<div class="section-headline" data-an="_fadeIn">
-								<h2 class="page-title" data-an="_fadeLt20">історія ABCOMMUNICATION</h2>
-								<h4 data-an="_fadeUp">
+								<h2 class="page-title" data-an="_fadeUp">історія ABCOMMUNICATION</h2>
+								<h4 data-an="_fadeUp" data-del="0.2">
 									Ми поєднуємо стратегічний змістовий підхід з цілеспрямованою діяльністю
 									досягнення.
 								</h4>
-								<p class="page-text" data-an="_fadeUp" data-del="0.2">
+								<p class="page-text" data-an="_fadeUp" data-del="0.4">
 									Наша місія полягає в тому, щоб запропонувати Вам багатофункціональні послуги за
 									доступними цінами з найкращим обслуговуванням. ABC - ми допоможемо Вам
 									адаптуватися до змін цифрового світу та трансформувати Ваш бізнес до сучасних
 									передових технологій.
 								</p>
 							</div>
-							<div class="s-article-image" data-an="_fadeIn">
+							<div class="s-article-image img-animate" data-an="_fadeIn">
 								<img src="img/05.jpeg" alt="abc" />
 							</div>
 						</article>
@@ -92,7 +88,7 @@
 									передових технологій.
 								</p>
 							</div>
-							<div class="s-article-image" data-an="_fadeIn">
+							<div class="s-article-image img-animate" data-an="_fadeIn">
 								<img src="img/04.png" alt="abc" />
 							</div>
 						</article>
@@ -102,29 +98,33 @@
 					<div class="container">
 						<div class="s-team-promo-content">
 							<div class="s-team-promo-image-decor" data-an="_fadeIn">
-								<div class="s-team-promo-image" data-an="_fadeIn">
+								<div class="s-team-promo-image img-animate" data-an="_fadeIn">
 									<img src="img/06.jpeg" alt="abc" />
 								</div>
 							</div>
 							<div class="s-team-promo-row" data-an="_fadeRt20">розвиток КОМПАНІЇ</div>
 							<div class="s-team-promo-row" data-an="_fadeRt20" data-del="0.2">
-								<div class="s-team-promo-decor-1">
-									<img src="img/interface/team-promo-decor-1.svg" alt="abc" />
-								</div>
+								<div class="s-team-promo-decor-1" style="background-image: url('img/interface/team-promo-decor-1.svg')"></div>
 								ЗАЛЕЖИТЬ
 							</div>
 							<div class="s-team-promo-row" data-an="_fadeRt20" data-del="0.4">
 								ВІД СПРАЦЬОВАНОСТІ
 							</div>
 							<div class="s-team-promo-row">
-								<div class="s-team-promo-image" data-an="_fadeIn">
+								<div class="s-team-promo-image img-animate" data-an="_fadeIn">
 									<img src="img/07.jpeg" alt="abc" />
 								</div>
 								<div data-an="_fadeRt20" data-del="0.6">
-									К<span class="s-team-promo-decor-2">O</span>МАНДИ
+									<div class="s-team-playground">
+										<div>К</div>
+										<div class="s-team-playground-grid">
+											<span class="s-team-playground-o">O</span>
+											<span>МАНДИ</span>
+											<div class="s-team-playground-hueta"><img src="img/interface/team-promo-decor-2.svg" alt="abc"></div>
+											<div class="s-team-playground-bg" style="background-image: url('img/interface/team-promo-decor-3.svg')"></div>
+										</div>
+									</div>
 								</div>
-								<!--<div><img src="img/interface/team-promo-decor-3.svg" alt="abc"></div>-->
-								<!--							<img src="img/interface/team-promo-decor-2.svg" alt="abc">-->
 								<div class="s-team-promo-decor-text" data-an="_fadeIn">
 									it SECURE SOFT COMMUNICATION
 								</div>
@@ -135,16 +135,16 @@
 				<section class="s-team">
 					<div class="container">
 						<div class="s-team-content">
-							<div class="section-headline">
-								<h2 class="page-title" data-an="_fadeLt20">КОМАНДА ABCOMMUNICATION</h2>
-								<p class="page-text" data-an="_fadeIn">
+							<div class="section-headline" data-an="_fadeIn">
+								<h2 class="page-title" data-an="_fadeUp">КОМАНДА ABCOMMUNICATION</h2>
+								<p class="page-text" data-an="_fadeUp" data-del="0.2">
 									Ми поєднуємо стратегічний змістовий підхід з цілеспрямованою діяльністю
 									досягнення.
 								</p>
 							</div>
 							<div class="s-team-grid">
-								<div class="s-team-card" data-an="_fadeIn">
-									<div class="s-team-card-image">
+								<div class="s-team-card">
+									<div class="s-team-card-image img-animate" data-an="_fadeIn">
 										<img src="img/team/01.jpeg" alt="abc" />
 									</div>
 									<span class="s-team-card-name">Анна Вінтур</span>
@@ -159,9 +159,12 @@
 											</a>
 										</div>
 									</div>
+									<div class="s-team-card-descr">
+										“ Ми цінуємомо розвиток кожного з працівників, тому робимо все можливе ”
+									</div>
 								</div>
-								<div class="s-team-card" data-an="_fadeIn" data-del="0.2">
-									<div class="s-team-card-image">
+								<div class="s-team-card">
+									<div class="s-team-card-image img-animate" data-an="_fadeIn" data-del="0.2">
 										<img src="img/team/02.jpeg" alt="abc" />
 									</div>
 									<span class="s-team-card-name">Володимир Грановський</span>
@@ -176,9 +179,12 @@
 											</a>
 										</div>
 									</div>
+									<div class="s-team-card-descr">
+										“ Ми цінуємомо розвиток кожного з працівників, тому робимо все можливе ”
+									</div>
 								</div>
-								<div class="s-team-card" data-an="_fadeIn" data-del="0.4">
-									<div class="s-team-card-image">
+								<div class="s-team-card">
+									<div class="s-team-card-image img-animate" data-an="_fadeIn" data-del="0.4">
 										<img src="img/team/03.jpeg" alt="abc" />
 									</div>
 									<span class="s-team-card-name">Мирослава Зінченко</span>
@@ -193,9 +199,12 @@
 											</a>
 										</div>
 									</div>
+									<div class="s-team-card-descr">
+										“ Ми цінуємомо розвиток кожного з працівників, тому робимо все можливе ”
+									</div>
 								</div>
-								<div class="s-team-card" data-an="_fadeIn" data-del="0.6">
-									<div class="s-team-card-image">
+								<div class="s-team-card">
+									<div class="s-team-card-image img-animate" data-an="_fadeIn" data-del="0.6">
 										<img src="img/team/04.jpeg" alt="abc" />
 									</div>
 									<span class="s-team-card-name">Констянтин Бернадський</span>
@@ -210,10 +219,13 @@
 											</a>
 										</div>
 									</div>
+									<div class="s-team-card-descr">
+										“ Ми цінуємомо розвиток кожного з працівників, тому робимо все можливе ”
+									</div>
 								</div>
 
-								<div class="s-team-card" data-an="_fadeIn">
-									<div class="s-team-card-image">
+								<div class="s-team-card">
+									<div class="s-team-card-image img-animate" data-an="_fadeIn" data-del="0.2">
 										<img src="img/team/05.jpeg" alt="abc" />
 									</div>
 									<span class="s-team-card-name">Анна Вінтур</span>
@@ -228,9 +240,12 @@
 											</a>
 										</div>
 									</div>
+									<div class="s-team-card-descr">
+										“ Ми цінуємомо розвиток кожного з працівників, тому робимо все можливе ”
+									</div>
 								</div>
-								<div class="s-team-card" data-an="_fadeIn" data-del="0.2">
-									<div class="s-team-card-image">
+								<div class="s-team-card">
+									<div class="s-team-card-image img-animate" data-an="_fadeIn" data-del="0.4">
 										<img src="img/team/06.jpeg" alt="abc" />
 									</div>
 									<span class="s-team-card-name">Володимир Грановський</span>
@@ -245,9 +260,12 @@
 											</a>
 										</div>
 									</div>
+									<div class="s-team-card-descr">
+										“ Ми цінуємомо розвиток кожного з працівників, тому робимо все можливе ”
+									</div>
 								</div>
-								<div class="s-team-card" data-an="_fadeIn" data-del="0.4">
-									<div class="s-team-card-image">
+								<div class="s-team-card">
+									<div class="s-team-card-image img-animate" data-an="_fadeIn" data-del="0.6">
 										<img src="img/team/07.jpeg" alt="abc" />
 									</div>
 									<span class="s-team-card-name">Мирослава Зінченко</span>
@@ -262,9 +280,12 @@
 											</a>
 										</div>
 									</div>
+									<div class="s-team-card-descr">
+										“ Ми цінуємомо розвиток кожного з працівників, тому робимо все можливе ”
+									</div>
 								</div>
-								<div class="s-team-card" data-an="_fadeIn" data-del="0.6">
-									<div class="s-team-card-image">
+								<div class="s-team-card">
+									<div class="s-team-card-image img-animate" data-an="_fadeIn" data-del="0.8">
 										<img src="img/team/08.jpeg" alt="abc" />
 									</div>
 									<span class="s-team-card-name">Констянтин Бернадський</span>
@@ -278,6 +299,9 @@
 												<img src="img/interface/facebook.svg" alt="facebook" />
 											</a>
 										</div>
+									</div>
+									<div class="s-team-card-descr">
+										“ Ми цінуємомо розвиток кожного з працівників, тому робимо все можливе ”
 									</div>
 								</div>
 							</div>
@@ -339,8 +363,8 @@
 				<section class="s-sertificates black-mode">
 					<div class="container">
 						<div class="section-headline" data-an="_fadeIn">
-							<h2 class="page-title" data-an="_fadeLt20">лІЦЕНЗІЇ ТА СЕРТИФІКАТИ</h2>
-							<p class="page-text">
+							<h2 class="page-title" data-an="_fadeUp">лІЦЕНЗІЇ ТА СЕРТИФІКАТИ</h2>
+							<p class="page-text" data-an="_fadeUp" data-del="0.2">
 								Ми співпрацюємо з компаніями міжнародного рівня, що допомагає нам створювати та
 								підтримувати якісний продукт.
 							</p>
@@ -415,8 +439,8 @@
 					<div class="container">
 						<div class="s-vacancy-content">
 							<div class="section-headline" data-an="_fadeIn">
-								<h2 class="page-title" data-an="_fadeLt20">ПРИЄДНАЙСЯ ДО НАШОЇ КОМАНДИ</h2>
-								<p class="page-text">
+								<h2 class="page-title" data-an="_fadeUp">ПРИЄДНАЙСЯ ДО НАШОЇ КОМАНДИ</h2>
+								<p class="page-text" data-an="_fadeUp" data-del="0.2">
 									Ми співпрацюємо з компаніями міжнародного рівня, що допомагає нам створювати та
 									підтримувати якісний продукт.
 								</p>

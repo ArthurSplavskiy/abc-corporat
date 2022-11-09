@@ -1,6 +1,7 @@
 .s-hero {
 	position: relative;
 	color: white;
+	background: transparent;
 	@media (max-width: $mobile) {
 		overflow: hidden;
 	}
@@ -16,10 +17,20 @@
 		position: absolute;
 		top: 0;
 		right: 0;
-		transform: translate(20%, -20%);
-		transition: transform 1s ease-out;
+		overflow: hidden;
+		clip-path: inset(0 100% 0 0);
+		transition: all 1800ms cubic-bezier(0.345, 0.005, 0.185, 0.995) 5ms;
+		img {
+			transition: all 1800ms cubic-bezier(0.345, 0.005, 0.185, 0.995) 5ms;
+			transform: scale(2);
+			opacity: 0;
+		}
 		&._animated {
-			transform: translate(0);
+			clip-path: inset(0 0 0 0);
+			img {
+				transform: scale(1);
+				opacity: 1;
+			}
 		}
 		@media (max-width: $tablet) {
 			width: rem(468);
@@ -170,9 +181,28 @@
 	}
 
 	&-anchor {
-		max-width: 80px;
+		@extend %flex-center;
+		background: rgba(255, 255, 255, 0.1);
+		border-radius: 100%;
+		border: 1px solid white;
+		width: 80px;
+		height: 80px;
+		transition: $transition;
+		transform: scale(0);
+		&._animated {
+			transform: scale(1);
+		}
 		svg {
-			transform: scale(2.5) translateY(7px) rotate(-180deg) !important;
+			transition: $transition;
+		}
+		//svg {
+		//	transform: scale(2.5) translateY(7px) rotate(-180deg) !important;
+		//}
+		&:hover {
+			background: rgba(255, 255, 255, 0.3);
+			svg {
+				transform: translateY(5px);
+			}
 		}
 		@media (min-width: $tablet) {
 			margin-left: 112px;

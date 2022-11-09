@@ -15,7 +15,6 @@ const init = () => {
 
 	forms.formFieldsInit();
 	forms.formSubmit(true);
-	forms.formViewpass();
 	functions.setPhoneMask();
 	functions.spollers();
 	functions.tabs();

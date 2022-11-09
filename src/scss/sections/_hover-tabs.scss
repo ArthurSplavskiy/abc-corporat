@@ -128,10 +128,10 @@
       &.js-show {
         display: block;
       }
-      &.js-show > * {
+      &.js-show {
         animation: tabFadeIn 0.2s ease-out forwards;
       }
-      &.js-hide > * {
+      &.js-hide {
         animation: tabFadeOut 0.2s ease-out forwards;
       }
     }

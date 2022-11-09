@@ -30,7 +30,7 @@ const init = () => {
 			'[data-lottie="menu-btn-decor"]',
 			'others/lottie/menu-btn-decor.json'
 		);
-		functions.addLottieAnimation('[data-lottie="hero-anchor"]', 'others/lottie/anchor.json');
+		// functions.addLottieAnimation('[data-lottie="hero-anchor"]', 'others/lottie/anchor.json');
 	}, 4000)
 
 	functions.addLottieAnimation('[data-lottie="s-media-decor"]', 'others/lottie/2.json', true);

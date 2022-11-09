@@ -4,6 +4,28 @@
   border-radius: 10px;
   overflow: hidden;
   border: 1px solid $main-blue;
+  transition: $transition;
+  &:hover {
+    background: $main-blue;
+    color: white;
+    p {
+      transition: $transition;
+      color: white;
+    }
+    .btn {
+      border-color: white;
+      color: white;
+    }
+    .blog-card-head {
+      color: white;
+    }
+  }
+  .btn {
+    &:hover {
+      background: white;
+      color: $main-blue;
+    }
+  }
   &-img {
     overflow: hidden;
     border-radius: 10px 10px 0 0;
@@ -49,6 +71,9 @@
       margin-bottom: 12px;
       font-size: 10px;
       line-height: 10px;
+    }
+    a {
+      transition: none;
     }
   }
   &-tags {

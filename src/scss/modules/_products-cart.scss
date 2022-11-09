@@ -12,23 +12,23 @@
       }
     }
   }
-  &:hover {
-    & > * {
-      color: white!important;
-    }
-    &:before {
-      transform: scale(1);
-      opacity: 1;
-    }
-    &.text-grey {
-      .product-cart-link {
-        color: white;
-        svg {
-          stroke: white;
-        }
-      }
-    }
-  }
+  //&:hover {
+  //  & > * {
+  //    color: white!important;
+  //  }
+  //  &:before {
+  //    transform: scale(1);
+  //    opacity: 1;
+  //  }
+  //  &.text-grey {
+  //    .product-cart-link {
+  //      color: white;
+  //      svg {
+  //        stroke: white;
+  //      }
+  //    }
+  //  }
+  //}
   &:before {
     content: '';
     position: absolute;

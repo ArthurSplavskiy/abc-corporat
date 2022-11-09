@@ -30,6 +30,7 @@
 			z-index: 3;
 			cursor: pointer;
 			border-radius: 100%;
+			transform: translateY(10px);
 			svg {
 				pointer-events: none;
 				transform: scale(2.1) translate3d(0px, -10px, 0px)!important;
