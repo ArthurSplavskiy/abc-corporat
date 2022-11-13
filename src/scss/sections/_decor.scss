@@ -10,9 +10,6 @@
 		top: -18%;
 		left: 0;
 		right: 0;
-		@media (max-width: $mobile) {
-			display: none;
-		}
 	}
 	&-line {
 		display: flex;

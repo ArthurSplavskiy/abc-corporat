@@ -12,6 +12,9 @@
 		@media (min-width: 1920px) {
 			top: -40vw;
 		}
+		@media (max-width: $mobile) {
+			display: none;
+		}
 		svg {
 			path[fill='rgb(82,82,89)'] {
 				fill: transparent;
@@ -23,7 +26,7 @@
 		.s-media-content {
 			padding: rem(200) 0;
 			@media (max-width: $mobile) {
-				padding: rem(72) 0;
+				padding: rem(42) 0 rem(72) 0;
 			}
 		}
 	}

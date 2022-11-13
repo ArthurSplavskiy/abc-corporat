@@ -318,6 +318,12 @@
 			.menu-locales {
 				margin-left: auto;
 			}
+			.contacts-text {
+				span:last-child,
+				a:last-child{
+					color: black
+				}
+			}
 		}
 	}
 }

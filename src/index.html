@@ -5,7 +5,7 @@
 	<body class="p-home">
 		<div class="wrapper" style="overflow: hidden">
 			@@include('html/_preloader-markup.htm',{}) @@include('html/_header.htm',{})
-			<main>
+			<main data-an="_fadeIn">
 				<section class="s-hero">
 					<div class="s-hero-image" data-an="_fadeIn">
 						<img src="img/page-bg.jpeg" alt="abc" />
@@ -85,7 +85,7 @@
 							</div>
 							<div class="hover-tabs-links">
 								<a
-									href="#"
+									href="services.html"
 									class="hover-tabs-link js-active"
 									data-tab-link="tab1"
 									data-an="_fadeUp">
@@ -93,7 +93,7 @@
 									<img src="img/interface/link-arrow.svg" alt="abc" />
 								</a>
 								<a
-									href="#"
+									href="services.html"
 									class="hover-tabs-link"
 									data-tab-link="tab2"
 									data-an="_fadeUp"
@@ -104,7 +104,7 @@
 										alt="abc" />
 								</a>
 								<a
-									href="#"
+									href="services.html"
 									class="hover-tabs-link"
 									data-tab-link="tab3"
 									data-an="_fadeUp"
@@ -115,7 +115,7 @@
 										alt="abc" />
 								</a>
 								<a
-									href="#"
+									href="services.html"
 									class="hover-tabs-link"
 									data-tab-link="tab4"
 									data-an="_fadeUp"
@@ -124,7 +124,7 @@
 									<img src="img/interface/link-arrow.svg" alt="abc" />
 								</a>
 								<a
-									href="#"
+									href="services.html"
 									class="hover-tabs-link"
 									data-tab-link="tab5"
 									data-an="_fadeUp"
@@ -133,7 +133,7 @@
 									<img src="img/interface/link-arrow.svg" alt="abc" />
 								</a>
 								<a
-									href="#"
+									href="services.html"
 									class="hover-tabs-link"
 									data-tab-link="tab6"
 									data-an="_fadeUp"
@@ -468,6 +468,7 @@
 						</div>
 					</div>
 				</section>
+				<div id="map" data-an="_fadeIn"></div>
 			</main>
 			@@include('html/_footer.htm',{}) @@include('html/_popup-thank.htm',{}) @@include('html/_js.htm',{})
 		</div>

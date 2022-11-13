@@ -5,7 +5,7 @@
 	<body class="p-template">
 		<div class="wrapper" id="mainTop" style="overflow: hidden">
 			@@include('html/_preloader-markup.htm',{}) @@include('html/_header.htm',{})
-			<main>
+			<main data-an="_fadeIn">
 				<section class="s-hero">
 					<div class="s-hero-image" data-an="_fadeIn">
 						<img src="img/portfolio-hero.jpeg" alt="abc" />
@@ -37,7 +37,10 @@
 								</ul>
 							</nav>
 							<h1 class="s-hero-small-title" data-an="_fadeUp20">ПОРТФОЛІО
-								ABCOMMUNICATION</h1>
+								<div>
+									<span class="s-hero-small-title-desktop">ABCOMMUNICATION</span>
+									<span class="s-hero-small-title-mobile">ABC <br> <span>OMMUNICATION</span></span>
+								</div></h1>
 							<div class="s-hero-descr page-text" data-an="_fadeUp">
 								Within 22 years of our experience, we have worked for over 200 global clients helping them solve their business problems and digitally transform their organisation.
 							</div>

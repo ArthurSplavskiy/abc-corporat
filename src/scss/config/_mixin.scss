@@ -64,3 +64,41 @@
     font-display: swap;
   }
 }
+
+@mixin disable-scrollbar() {
+  // webkit
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  // -moz-
+  &::-moz-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  &::-moz-scrollbar-thumb {
+    background: transparent;
+  }
+  &::-moz-scrollbar-track {
+    background: transparent;
+  }
+
+  //-ms-
+  &::-ms-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  &::-ms-scrollbar-thumb {
+    background: transparent;
+  }
+  &::-ms-scrollbar-track {
+    background: transparent;
+  }
+}

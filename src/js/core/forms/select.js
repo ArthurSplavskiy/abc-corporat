@@ -49,6 +49,7 @@ export const selectModule = {
 		classSelectInput: "select__input", // Поле ввода
 		classSelectText: "select__text", // Оболочка текстовых данных
 		classSelectOptions: "select__options", // Выпадающий список
+		classSelectPlaceholder: "select__placeholder", // Выпадающий список
 		classSelectOptionsScroll: "select__scroll", // Оболочка при скролле
 		classSelectOption: "select__option", // Пункт
 		classSelectContent: "select__content", // Оболочка контента в заголовке

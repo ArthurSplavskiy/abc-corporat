@@ -11,6 +11,9 @@
     position: absolute;
     top: 54px;
     left: 0;
+    @media (max-width: $mobile) {
+      display: none;
+    }
   }
 
   &-content {

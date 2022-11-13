@@ -5,7 +5,7 @@
 	<body class="p-template">
 		<div class="wrapper" id="mainTop" style="overflow: hidden">
 			@@include('html/_preloader-markup.htm',{}) @@include('html/_header.htm',{})
-			<main>
+			<main data-an="_fadeIn">
 				<section class="s-hero">
 					<div class="s-hero-image" data-an="_fadeIn">
 						<img src="img/about-promo.jpeg" alt="abc" />
@@ -63,6 +63,7 @@
 									Ми поєднуємо стратегічний змістовий підхід з цілеспрямованою діяльністю
 									досягнення.
 								</h4>
+								<div class="s-article-image-1"></div>
 								<p class="page-text" data-an="_fadeUp" data-del="0.4">
 									Наша місія полягає в тому, щоб запропонувати Вам багатофункціональні послуги за
 									доступними цінами з найкращим обслуговуванням. ABC - ми допоможемо Вам
@@ -70,7 +71,7 @@
 									передових технологій.
 								</p>
 							</div>
-							<div class="s-article-image img-animate" data-an="_fadeIn">
+							<div class="s-article-image img-animate" data-an="_fadeIn" data-da=".s-article-image-1, 480, first">
 								<img src="img/05.jpeg" alt="abc" />
 							</div>
 						</article>
@@ -81,6 +82,7 @@
 									досягнення. Ми поєднуємо стратегічний змістовий підхід з цілеспрямованою
 									діяльністю досягнення.
 								</h4>
+								<div class="s-article-image-2"></div>
 								<p class="page-text" data-an="_fadeUp" data-del="0.2">
 									Наша місія полягає в тому, щоб запропонувати Вам багатофункціональні послуги за
 									доступними цінами з найкращим обслуговуванням. ABC - ми допоможемо Вам
@@ -88,7 +90,7 @@
 									передових технологій.
 								</p>
 							</div>
-							<div class="s-article-image img-animate" data-an="_fadeIn">
+							<div class="s-article-image img-animate" data-an="_fadeIn" data-da=".s-article-image-2, 480, first">
 								<img src="img/04.png" alt="abc" />
 							</div>
 						</article>
