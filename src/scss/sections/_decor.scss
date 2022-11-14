@@ -4,12 +4,21 @@
 	@media (max-width: $tablet) {
 		padding: 72px 0;
 	}
+	[data-lottie='s-decor-lottie-left'] {
+		@media (max-width: 480px) {
+			position: absolute;
+			left: 10%;
+		}
+	}
 	[data-lottie='s-decor-lottie-right'] {
 		max-width: 850px;
 		position: absolute;
 		top: -18%;
 		left: 0;
 		right: 0;
+		@media (max-width: 480px) {
+			display: none;
+		}
 	}
 	&-line {
 		display: flex;
@@ -29,6 +38,9 @@
 			@media (max-width: $mobile) {
 				padding-top: 12px;
 				margin-bottom: 40px;
+			}
+			@media (max-width: 480px) {
+				margin-bottom: 10px;
 			}
 			.s-decor-word {
 				@media (max-width: 1340px) {
@@ -60,14 +72,18 @@
 		}
 		&-border {
 			margin-right: 24px;
-			@media (max-width: $tablet) {
-				height: 80px;
-			}
 			@media (max-width: 1340px) {
 				position: absolute;
 				top: 0;
 				left: 0;
 				z-index: -1;
+			}
+			@media (max-width: $tablet) {
+				height: 80px;
+			}
+			@media (max-width: 480px) {
+				position: relative;
+				margin: 8px 0 0 0;
 			}
 		}
 	}
@@ -98,6 +114,13 @@
 			-webkit-text-fill-color: transparent;
 			background-clip: text;
 			text-fill-color: transparent;
+		}
+	}
+	&-content {
+		@media(max-width: $mobile) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 		}
 	}
 }

@@ -53,13 +53,16 @@
 		pointer-events: all;
 		z-index: 2;
 		transition: $transition;
+		@media (max-width: 1465px) {
+			padding: rem(126) calc($containerPadding / 2) + px rem(68) rem(112);
+		}
 		@media (max-width: $tablet) {
 			flex: 0 0 100%;
 			width: 100%;
 			padding: rem(126) calc($containerPadding / 2) + px rem(68) rem(52);
 		}
 		@media (max-width: $mobile) {
-			padding: rem(35) calc($containerPadding / 2) + px rem(24) calc($containerPadding / 2) + px;
+			padding: rem(35) calc($containerPadding / 2) + px rem(64) calc($containerPadding / 2) + px;
 		}
 	}
 

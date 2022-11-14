@@ -21,6 +21,10 @@
     }
   }
   .btn {
+    @media (max-width: $mobile) {
+      background: $main-blue;
+      color: white;
+    }
     &:hover {
       background: white;
       color: $main-blue;
@@ -56,6 +60,9 @@
     @media (max-width: $mobile) {
       padding: 12px;
     }
+  }
+  &-time {
+    min-width: 62px;
   }
   &-head {
     @extend %flex-along-center;

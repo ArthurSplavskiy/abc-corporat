@@ -6,9 +6,15 @@
     gap: 24px;
     margin-bottom: 32px;
     @media (max-width: $tablet) {
-      gap: 8px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 32px;
+      row-gap: 8px;
       justify-content: space-between;
 
+    }
+    @media (max-width: $mobile) {
+      column-gap: 24px;
     }
     @media (max-width: $mobileSmall) {
       .btn {
