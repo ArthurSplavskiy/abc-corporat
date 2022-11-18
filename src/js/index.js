@@ -19,9 +19,7 @@ const init = () => {
 	functions.spollers();
 	functions.tabs();
 
-	functions.addLottieAnimation('[data-lottie="preloader-a"]', 'others/lottie/a.json');
-	functions.addLottieAnimation('[data-lottie="preloader-b"]', 'others/lottie/b.json');
-	functions.addLottieAnimation('[data-lottie="preloader-c"]', 'others/lottie/c.json');
+	functions.addLottieAnimation('[data-lottie="preloader"]', 'others/lottie/preloader.json');
 	setTimeout(() => {
 		functions.addLottieAnimation('[data-lottie="a"]', 'others/lottie/a.json');
 		functions.addLottieAnimation('[data-lottie="b"]', 'others/lottie/b.json');

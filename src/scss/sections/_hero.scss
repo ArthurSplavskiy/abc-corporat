@@ -33,6 +33,12 @@
 				filter: brightness(0.2);
 			}
 		}
+		&:after {
+			@extend %after-shadow;
+		}
+		&:before {
+			@extend %before-shadow;
+		}
 		&._animated {
 			clip-path: inset(0 0 0 0);
 			img {

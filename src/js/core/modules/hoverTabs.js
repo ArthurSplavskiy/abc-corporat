@@ -8,7 +8,7 @@ function setHoverTabs(event) {
         setTimeout(() => {
             tabContents[i].style.display = 'none';
             tabLinks[i].classList.remove("js-active");
-        }, 200)
+        }, 400)
         tabContents[i].classList.remove("js-show");
         tabLinks[i].classList.remove("js-active");
     }
@@ -18,7 +18,7 @@ function setHoverTabs(event) {
         document.querySelector(`[data-tab-content='${tabID}']`).classList.add("js-show");
         document.querySelector(`[data-tab-content='${tabID}']`).style.display = 'block';
         document.querySelector(`[data-tab-content='${tabID}']`).classList.remove("js-hide");
-    }, 200)
+    }, 400)
 
 }
 
