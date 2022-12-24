@@ -19,18 +19,6 @@ const init = () => {
 	functions.spollers();
 	functions.tabs();
 
-	functions.addLottieAnimation('[data-lottie="preloader"]', 'others/lottie/preloader.json');
-	setTimeout(() => {
-		functions.addLottieAnimation('[data-lottie="a"]', 'others/lottie/a.json');
-		functions.addLottieAnimation('[data-lottie="b"]', 'others/lottie/b.json');
-		functions.addLottieAnimation('[data-lottie="c"]', 'others/lottie/c.json');
-		functions.addLottieAnimation(
-			'[data-lottie="menu-btn-decor"]',
-			'others/lottie/menu-btn-decor.json'
-		);
-		// functions.addLottieAnimation('[data-lottie="hero-anchor"]', 'others/lottie/anchor.json');
-	}, 4000)
-
 	functions.addLottieAnimation('[data-lottie="s-media-decor"]', 'others/lottie/2.json', true);
 
 	functions.addLottieAnimation(
