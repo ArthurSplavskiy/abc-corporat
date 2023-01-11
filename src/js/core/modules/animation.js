@@ -282,7 +282,7 @@ $(window).on('load', function () {
 	//after full load
 	//hide preloader after load
 	if (!el.preloader.hasClass(el.preloaderCl)) {
-		setTimeout(funPreloader, 4000);
+		setTimeout(funPreloader, 6000);
 	}
 
 	const firstLoad = document.cookie
@@ -291,13 +291,13 @@ $(window).on('load', function () {
 		?.split('=')?.[1];
 
 	if (!Boolean(firstLoad) && !el.preloader.hasClass(el.preloaderCl)) {
-		setTimeout(funPreloader, 4000);
+		setTimeout(funPreloader, 6000);
 		setTimeout(() => {
 			addLottieAnimation('[data-lottie="a"]', 'others/lottie/a.json');
 			addLottieAnimation('[data-lottie="b"]', 'others/lottie/b.json');
 			addLottieAnimation('[data-lottie="c"]', 'others/lottie/c.json');
 			addLottieAnimation('[data-lottie="menu-btn-decor"]', 'others/lottie/menu-btn-decor.json');
-		}, 4000);
+		}, 6000);
 	} else {
 		funPreloader();
 		addLottieAnimation('[data-lottie="a"]', 'others/lottie/a.json');

@@ -34,7 +34,7 @@
 			transform: translateY(10px);
 			svg {
 				pointer-events: none;
-				transform: scale(2.1) translate3d(0px, -10px, 0px)!important;
+				transform: scale(2.1) translate3d(0px, -10px, 0px) !important;
 			}
 			@media (max-width: $mobile) {
 				width: 136px;
@@ -60,7 +60,7 @@
 					font-size: 10px;
 				}
 				&:first-child {
-					color: #c6c8ce;
+					color: $main-yellow;
 				}
 			}
 			li {
@@ -256,8 +256,8 @@
 	}
 	&-logo {
 		width: 100%;
-		max-width: rem(224);
-		margin-bottom: rem(18);
+		max-width: rem(264);
+		margin-bottom: rem(90);
 		@media (max-width: 1250px) {
 			margin-bottom: 0;
 		}
@@ -292,9 +292,9 @@
 		}
 		a {
 			font-size: 12px;
-			line-height: 100%;
+			line-height: 120%;
 			cursor: pointer;
-			color: #c6c8ce;
+			color: $main-yellow;
 			&:hover {
 				color: white;
 			}
@@ -302,7 +302,7 @@
 				font-weight: 500;
 				font-size: 10px;
 				text-transform: uppercase;
-				color: #c6c8ce;
+				color: $main-yellow;
 			}
 		}
 	}

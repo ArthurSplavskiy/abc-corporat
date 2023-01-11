@@ -42,10 +42,10 @@
 			}
 
 			&._tab-active {
-				color: white;
-				border-color: white;
+				color: $main-yellow;
+				border-color: $main-yellow;
 				svg {
-					stroke: white;
+					stroke: $main-yellow;
 				}
 				@media (max-width: $mobile) {
 					color: $main-blue;
@@ -80,7 +80,7 @@
 				font-weight: 700;
 				font-size: 14px;
 				text-transform: uppercase;
-				color: #8aa7fc;
+				color: $main-yellow;
 				margin-bottom: 8px;
 				@media (max-width: $mobile) {
 					font-size: 12px;

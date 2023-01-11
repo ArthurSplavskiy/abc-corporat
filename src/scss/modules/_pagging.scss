@@ -2,15 +2,16 @@
 	color: white;
 	&-black {
 		color: black;
-		.pagination__prev, .pagination__next {
+		.pagination__prev,
+		.pagination__next {
 			&._disable {
 				svg {
-					stroke: #D9D9D9;
+					stroke: #d9d9d9;
 				}
 			}
 		}
 		svg {
-			stroke: #0A0A0A;
+			stroke: #0a0a0a;
 		}
 	}
 	@extend %flex-center;
@@ -22,14 +23,18 @@
 		border-radius: 4px;
 		border: 1px solid transparent;
 		&:hover {
-			border-color: $main-blue;
+			border-color: $main-yellow;
 		}
 	}
-	&__prev, &__next {
+	&__prev,
+	&__next {
 		font-size: rem(28);
+		svg {
+			stroke: $main-yellow;
+		}
 		&._disable {
 			svg {
-				stroke: #2B2F2F
+				stroke: #2b2f2f;
 			}
 		}
 	}
@@ -42,7 +47,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		
+
 		li {
 			width: rem(40);
 			height: rem(40);
@@ -51,9 +56,9 @@
 	}
 	&__item {
 		position: relative;
-		
+
 		&._active {
-			color: #8A97FB;
+			color: $main-yellow;
 		}
 	}
 }

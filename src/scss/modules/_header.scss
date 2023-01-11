@@ -7,9 +7,9 @@
 	transition: box-shadow 0.3s, background 0.4s;
 
 	&-logo {
-		max-width: 130px;
+		max-width: 200px;
 		@media (max-width: $mobile) {
-			max-width: 72px;
+			max-width: 122px;
 		}
 	}
 
@@ -17,11 +17,14 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: calc($containerPadding / 2) + px rem(60);
+		padding: 24px rem(60) calc($containerPadding / 2) + px rem(60);
 		@media (max-width: 1465px) {
 			max-width: $containerWidth;
 			box-sizing: content-box;
 			margin: 0 auto;
+			padding: 24px calc($containerPadding / 2) + px;
+		}
+		@media (max-width: $mobile) {
 			padding: calc($containerPadding / 2) + px;
 		}
 	}

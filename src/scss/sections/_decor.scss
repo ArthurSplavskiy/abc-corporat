@@ -1,10 +1,13 @@
 .s-decor {
-	padding: 60px 0 110px 0;
+	padding: 60px 0;
 	color: white;
 	@media (max-width: $tablet) {
 		padding: 72px 0;
 	}
 	[data-lottie='s-decor-lottie-left'] {
+		max-height: 183px;
+		display: flex;
+		align-items: center;
 		@media (max-width: 480px) {
 			position: absolute;
 			left: 10%;
@@ -13,7 +16,7 @@
 	[data-lottie='s-decor-lottie-right'] {
 		max-width: 850px;
 		position: absolute;
-		top: -18%;
+		top: -12%;
 		left: 0;
 		right: 0;
 		@media (max-width: 480px) {
@@ -91,7 +94,7 @@
 		font-weight: 700;
 		font-size: 140px;
 		text-transform: uppercase;
-		color: white;
+		color: $main-blue;
 		@media (max-width: $tablet) {
 			font-size: 80px;
 		}
@@ -99,25 +102,11 @@
 			font-size: 48px;
 		}
 		&-gradient {
-			background: linear-gradient(
-				120.65deg,
-				#585c62 28.62%,
-				#ffffff 46.82%,
-				#858d8e 55.91%,
-				#2b2f2f 76.96%,
-				#e9e9e9 98%,
-				#343939 113.92%,
-				#ffffff 123.59%,
-				#141515 135.53%
-			);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			background-clip: text;
-			text-fill-color: transparent;
+			color: $main-yellow;
 		}
 	}
 	&-content {
-		@media(max-width: $mobile) {
+		@media (max-width: $mobile) {
 			display: flex;
 			flex-direction: column;
 			align-items: center;

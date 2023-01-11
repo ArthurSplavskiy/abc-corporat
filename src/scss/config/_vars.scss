@@ -13,8 +13,8 @@ $tablet: em(991.98);
 $mobile: em(767.98);
 $mobileSmall: em(479.98);
 
-$transition: all .4s cubic-bezier(.215,.61,.355,1);
+$transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
 
 $z-indexes: ('header', 'footer', 'wrapper-main');
 
-$bottom-line: inset 0px -1px 0px #525259;
+$bottom-line: inset 0px -1px 0px #00538b;

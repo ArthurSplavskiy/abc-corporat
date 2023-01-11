@@ -1,49 +1,45 @@
 .partners-slider {
-  display: flex;
-  overflow: visible!important;
+	display: flex;
+	overflow: visible !important;
 
-  &__swiper {
-    align-items: center;
-  }
-  &-slide {
-    & > * {
-      max-width: 180px;
-      @media (max-width: $mobile) {
-        max-width: 136px;
-      }
-    }
-    svg {
-      transition: $transition;
-      &:hover {
-        fill: $red;
-      }
-    }
-  }
-  &-descr {
-    text-transform: uppercase;
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 42px;
-    padding-top: 14px;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 14px;
-    background: linear-gradient(90deg, #67696E 0%, #F4F4F9 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-    border-top: 1px solid #525259;
-    @media (max-width: $mobile) {
-      margin-top: 16px;
-    }
-  }
-  &-white {
-    svg {
-      fill: $main-blue;
-      &:hover {
-        fill: $red;
-      }
-    }
-  }
+	&__swiper {
+		align-items: center;
+	}
+	&-slide {
+		& > * {
+			max-width: 180px;
+			@media (max-width: $mobile) {
+				max-width: 136px;
+			}
+		}
+		svg {
+			transition: $transition;
+			&:hover {
+				fill: $red;
+			}
+		}
+	}
+	&-descr {
+		text-transform: uppercase;
+		display: flex;
+		justify-content: flex-end;
+		margin-top: 42px;
+		padding-top: 14px;
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 14px;
+		color: $main-blue;
+		border-top: 1px solid $main-blue;
+		@media (max-width: $mobile) {
+			margin-top: 16px;
+		}
+	}
+	&-white {
+		svg {
+			fill: $main-blue;
+			&:hover {
+				fill: $red;
+			}
+		}
+	}
 }
