@@ -127,15 +127,8 @@
 			line-height: 46px;
 		}
 		@media (max-width: $mobileSmall) {
-			font-size: 42px;
-			line-height: 42px;
-		}
-		@media (max-width: 400px) {
 			font-size: 32px;
 			line-height: 32px;
-		}
-		@media (max-width: 320px) {
-			font-size: 24px;
 		}
 		div {
 			overflow: hidden;
