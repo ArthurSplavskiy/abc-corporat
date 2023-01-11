@@ -163,7 +163,7 @@
 			width: 100vw;
 			border-bottom: 1px dashed $main-blue;
 		}
-		@media (max-width: $tablet) {
+		@media (max-width: 1200px) {
 			display: none;
 		}
 	}

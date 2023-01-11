@@ -123,10 +123,19 @@
 		margin-bottom: rem(76);
 		@media (max-width: $mobile) {
 			margin-bottom: rem(56);
+			font-size: 46px;
+			line-height: 46px;
 		}
 		@media (max-width: $mobileSmall) {
 			font-size: 42px;
 			line-height: 42px;
+		}
+		@media (max-width: 400px) {
+			font-size: 32px;
+			line-height: 32px;
+		}
+		@media (max-width: 320px) {
+			font-size: 24px;
 		}
 		div {
 			overflow: hidden;
@@ -139,13 +148,21 @@
 				margin-bottom: -4px;
 			}
 		}
+		span[data-lottie='b'] {
+			@media (max-width: $mobileSmall) {
+				max-width: 42px;
+			}
+		}
 		span:not([data-lottie]) {
 			margin-left: -20px;
 			transition: transform 2s ease-out;
 			transform: translateY(200%);
 			color: $main-blue;
+			@media (max-width: $mobile) {
+				margin-left: -8px;
+			}
 			@media (max-width: $mobileSmall) {
-				margin-left: -12px;
+				margin-left: -8px;
 			}
 		}
 		&._animated {
