@@ -14,9 +14,6 @@
 		}
 		svg {
 			transition: $transition;
-			&:hover {
-				fill: $red;
-			}
 		}
 	}
 	&-descr {
@@ -34,11 +31,17 @@
 			margin-top: 16px;
 		}
 	}
-	&-white {
+	&-grey {
 		svg {
-			fill: $main-blue;
-			&:hover {
-				fill: $red;
+			&:not(:hover) {
+				fill: #525259;
+			}
+		}
+	}
+	&-blue {
+		svg {
+			&:not(:hover) {
+				fill: $main-blue;
 			}
 		}
 	}
