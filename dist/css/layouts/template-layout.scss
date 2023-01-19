@@ -1,0 +1,14 @@
+.p-template {
+	.s-hero {
+		overflow: hidden;
+	}
+	.s-hero-content {
+		padding-top: rem(128);
+		@media (max-width: $mobile) {
+			padding-top: rem(80);
+		}
+	}
+	.s-hero-title {
+		margin-bottom: 16px;
+	}
+}

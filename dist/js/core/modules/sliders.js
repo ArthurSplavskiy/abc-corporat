@@ -255,37 +255,31 @@ function initSliders() {
 	}
 
 	if (document.querySelector("[data-swiper='timeline']")) {
-		console.log('here')
 		const timelineSwiper = new Swiper("[data-swiper='timeline']", {
-			slidesPerView: 2.9,
+			slidesPerView: 3,
 			spaceBetween: 24,
 			freeMode: true,
 			watchSlidesProgress: true,
+			observer: true,
 			breakpoints: {
 				0: {
 					slidesPerView: 1.2,
 					spaceBetween: 16
 				},
 				480: {
-					slidesPerView: 1.9,
-				},
-				768: {
-					slidesPerView: 1.9
-				},
-				992: {
-					slidesPerView: 2.2
+					slidesPerView: 2
 				},
 				1200: {
-					slidesPerView: 1.9,
+					slidesPerView: 2,
 					spaceBetween: 24
 				},
 				1400: {
-					slidesPerView: 2.9,
+					slidesPerView: 3
 				}
 			}
 		});
-		new Swiper("[data-swiper='timeline-head']", {
-			spaceBetween: 10,
+		const s2 = new Swiper("[data-swiper='timeline-head']", {
+			spaceBetween: 24,
 			slidesPerView: 1,
 			navigation: {
 				prevEl: '[data-swiper-control="timeline-slider-prev"]',
@@ -293,7 +287,8 @@ function initSliders() {
 				disabledClass: '_disabled'
 			},
 			thumbs: {
-				swiper: timelineSwiper
+				swiper: timelineSwiper,
+				multipleActiveThumbs: false
 			}
 		});
 	}

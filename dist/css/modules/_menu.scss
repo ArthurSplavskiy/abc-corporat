@@ -1,0 +1,322 @@
+.menu {
+	position: fixed;
+	inset: 0 0 0 0;
+	height: 100vh;
+	z-index: 2;
+	display: flex;
+	pointer-events: none;
+	&:after {
+		content: '';
+		position: absolute;
+		inset: 0 0 0 0;
+		background: rgba(10, 10, 10, 0.8);
+		pointer-events: none;
+		z-index: 1;
+		opacity: 0;
+		transition: $transition;
+	}
+	&.js-open {
+		.menu-content {
+			transform: translate3d(0, 0, 0);
+		}
+		&:after {
+			opacity: 1;
+		}
+		.menu-overlay {
+			pointer-events: all;
+		}
+	}
+
+	&-overlay {
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+	}
+
+	&-content {
+		display: flex;
+		flex-direction: column;
+		flex: 0 0 820px;
+		height: 100%;
+		width: 820px;
+		background: white;
+		padding: rem(126) rem(60) rem(68) rem(112);
+		overflow-y: auto;
+		transform: translate3d(100%, 0, 0);
+		pointer-events: all;
+		z-index: 2;
+		transition: $transition;
+		@media (max-width: 1465px) {
+			padding: rem(126) calc($containerPadding / 2) + px rem(68) rem(112);
+		}
+		@media (max-width: $tablet) {
+			flex: 0 0 100%;
+			width: 100%;
+			padding: rem(126) calc($containerPadding / 2) + px rem(68) rem(52);
+		}
+		@media (max-width: $mobile) {
+			padding: rem(35) calc($containerPadding / 2) + px rem(64) calc($containerPadding / 2) + px;
+		}
+	}
+
+	&-headline {
+		@extend %flex-along-center;
+		margin-bottom: rem(25);
+		transition: all 2s ease-out;
+		& > span {
+			&:first-child {
+				font-weight: 500;
+				font-size: 18px;
+				line-height: 100%;
+				text-transform: uppercase;
+				color: $main-blue;
+				@media (max-width: $mobile) {
+					font-size: 12px;
+				}
+			}
+		}
+	}
+
+	&-locales {
+		position: relative;
+		min-width: 112px;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 14px;
+		text-transform: uppercase;
+		color: #89898f;
+
+		[data-spoller] {
+			display: flex;
+			padding: 14px 14px 14px 12px;
+			background: #f0f4f8;
+			border-radius: 10px;
+			cursor: pointer;
+			overflow: hidden;
+			@media (max-width: $mobile) {
+				padding: 9px 14px 9px 12px;
+			}
+			&._spoller-active {
+				img,
+				svg {
+					transform: rotate(-180deg);
+				}
+			}
+			img,
+			svg {
+				transition: $transition;
+				margin-left: auto;
+			}
+			& + ul {
+				padding: 24px 14px 14px 12px;
+				position: absolute;
+				top: calc(100% - 10px);
+				left: 0;
+				width: 100%;
+				background: inherit;
+				border-radius: 0 0 10px 10px;
+				background: #f0f4f8;
+				@media (max-width: $mobile) {
+					padding: 19px 14px 9px 12px;
+				}
+				li {
+					&:not(:last-child) {
+						margin-bottom: 10px;
+					}
+					a {
+						transition: $transition;
+						&:hover {
+							color: $main-blue;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	%active-first-level {
+		display: inline-flex;
+		padding-left: 54px;
+		@media (max-width: $tablet) {
+			padding-left: 38px;
+		}
+		@media (max-width: $mobile) {
+			padding-left: 23px;
+		}
+		& > img,
+		svg {
+			opacity: 1;
+			transform: translate(0, -60%);
+		}
+		a {
+			color: $main-blue;
+		}
+	}
+
+	&-first-level {
+		&-head {
+			display: inline-flex;
+			align-items: center;
+			position: relative;
+			margin-right: auto;
+			transition: $transition;
+			a {
+				text-transform: uppercase;
+				font-weight: 700;
+				font-size: 40px;
+				line-height: 100%;
+				color: #48484b;
+				margin-right: 16px;
+				@media (max-width: $tablet) {
+					font-size: 24px;
+				}
+				@media (max-width: $mobile) {
+					font-size: 18px;
+				}
+			}
+			& > img,
+			svg {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				transform: translate(-100%, -60%);
+				opacity: 0;
+				transition: $transition;
+				pointer-events: none;
+				@media (max-width: $tablet) {
+					max-width: 21px;
+				}
+				@media (max-width: $mobile) {
+					max-width: 14px;
+				}
+			}
+			&:hover {
+				@extend %active-first-level;
+			}
+			&.js-active {
+				@extend %active-first-level;
+				.menu-second-level-btn:after {
+					transform: translate(-50%) rotate(0);
+				}
+			}
+		}
+		& > li {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			min-height: 36px;
+			&:not(:last-child) {
+				margin-bottom: rem(12);
+				@media (min-width: $tablet) {
+					margin-bottom: rem(24);
+				}
+			}
+		}
+	}
+
+	&-second-level {
+		display: none;
+		padding-left: 54px;
+		@media (max-width: $tablet) {
+			padding-left: 38px;
+		}
+		@media (max-width: $mobile) {
+			padding-left: 23px;
+		}
+		&-list {
+			padding-top: rem(16);
+			@media (max-width: $mobile) {
+				padding-top: 0;
+			}
+		}
+		li {
+			line-height: 100%;
+			&:not(:last-child) {
+				padding: rem(16) 0 rem(12) 0;
+				border-bottom: 1px solid rgba(#323437, 0.1);
+				@media (max-width: $mobile) {
+					padding: rem(10) 0;
+				}
+			}
+			&:last-child {
+				padding-top: rem(16);
+				@media (max-width: $mobile) {
+					padding: rem(10) 0;
+				}
+			}
+			a {
+				font-weight: 500;
+				font-size: 24px;
+				line-height: 32px;
+				text-transform: uppercase;
+				color: #8b8b8f;
+				transition: $transition;
+				@media (max-width: $tablet) {
+					font-size: 18px;
+					line-height: 100%;
+				}
+				@media (max-width: $mobile) {
+					font-size: 14px;
+				}
+				&:hover {
+					color: $main-black;
+				}
+			}
+		}
+		&-btn {
+			width: 36px;
+			height: 36px;
+			cursor: pointer;
+			transition: $transition;
+			background: none;
+			position: relative;
+			margin-bottom: 4px;
+			background: none;
+			border-radius: 100%;
+			&:before,
+			&:after {
+				content: '';
+				display: block;
+				height: 2px;
+				width: 12px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%);
+				background: $main-blue;
+				transition: transform 0.2s ease-out;
+			}
+			&:after {
+				transform: translate(-50%) rotate(90deg);
+			}
+			&:hover {
+				background: $grey;
+			}
+		}
+	}
+
+	&-footer {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-end;
+		justify-content: space-between;
+		margin-top: auto;
+		transition: all 2s ease-out;
+		.contacts {
+			width: 100%;
+			margin-top: 40px;
+			&-icons {
+				align-items: center;
+			}
+			.menu-locales {
+				margin-left: auto;
+			}
+			.contacts-text {
+				span:last-child,
+				a:last-child {
+					color: black;
+				}
+			}
+		}
+	}
+}
