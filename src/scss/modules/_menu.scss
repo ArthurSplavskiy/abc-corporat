@@ -148,7 +148,8 @@
 			opacity: 1;
 			transform: translate(0, -60%);
 		}
-		a {
+		a,
+		span {
 			color: $main-blue;
 		}
 	}
@@ -160,13 +161,15 @@
 			position: relative;
 			margin-right: auto;
 			transition: $transition;
-			a {
+			a,
+			span {
 				text-transform: uppercase;
 				font-weight: 700;
 				font-size: 40px;
 				line-height: 100%;
 				color: #48484b;
 				margin-right: 16px;
+				cursor: pointer;
 				@media (max-width: $tablet) {
 					font-size: 24px;
 				}

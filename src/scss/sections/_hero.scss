@@ -276,4 +276,23 @@
 			grid-template-columns: 1fr;
 		}
 	}
+
+	[data-lottie='a'] {
+		width: 75px;
+		@media (max-width: $mobileSmall) {
+			width: 50px;
+		}
+	}
+	[data-lottie='b'] {
+		width: 60px;
+		@media (max-width: $mobileSmall) {
+			width: 39px;
+		}
+	}
+	[data-lottie='c'] {
+		width: 80px;
+		@media (max-width: $mobileSmall) {
+			width: 50px;
+		}
+	}
 }

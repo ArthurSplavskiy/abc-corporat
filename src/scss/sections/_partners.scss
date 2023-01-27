@@ -9,12 +9,12 @@
 			display: none;
 		}
 	}
-	&:after {
-		@extend %after-shadow;
-	}
-	&:before {
-		@extend %before-shadow;
-	}
+	// &:after {
+	// 	@extend %after-shadow;
+	// }
+	// &:before {
+	// 	@extend %before-shadow;
+	// }
 	@media (max-width: $mobile) {
 		padding: 72px 0;
 	}

@@ -115,11 +115,19 @@ function initSliders() {
 	if (document.querySelector("[data-swiper='advantage-text-slider']")) {
 		const imageSwiper = new Swiper("[data-swiper='advantage-image-slider']", {
 			speed: 600,
+			effect: 'fade',
+			fadeEffect: {
+				crossFade: true
+			},
 			spaceBetween: 20,
 			parallax: true
 		});
 		new Swiper("[data-swiper='advantage-text-slider']", {
 			speed: 600,
+			effect: 'fade',
+			fadeEffect: {
+				crossFade: true
+			},
 			slidesPerView: 1,
 			parallax: true,
 			navigation: {
@@ -241,7 +249,7 @@ function initSliders() {
 		const container = "[data-swiper='quote-slider']";
 		const sliderOptions = {
 			parallax: true,
-			autoHeight: true,
+			autoHeight: false,
 			slidesPerView: 1,
 			spaceBetween: 24,
 			speed: 800,

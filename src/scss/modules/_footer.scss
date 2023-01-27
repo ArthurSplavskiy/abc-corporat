@@ -107,6 +107,12 @@
 				margin-bottom: rem(16);
 			}
 		}
+		&:last-child {
+			margin-bottom: rem(24);
+			@media (max-width: $mobile) {
+				margin-bottom: rem(16);
+			}
+		}
 	}
 
 	a {
