@@ -1,0 +1,72 @@
+button {
+	&:active {
+		transform: scale(0.95);
+	}
+}
+
+.btn {
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 14px;
+	text-align: center;
+	text-transform: uppercase;
+	color: white;
+	padding: 17px;
+	border-radius: 10px;
+	transition: $transition;
+	cursor: pointer;
+	min-width: 200px;
+	&:hover {
+		background: white;
+		color: black;
+	}
+
+	&-big {
+		font-size: 16px;
+		padding: 24px;
+		border: 1px solid $main-yellow;
+		@media (max-width: $mobile) {
+			padding: 17px;
+			font-size: 14px;
+		}
+		&:hover {
+			background: $main-yellow;
+			color: black;
+		}
+	}
+
+	&-white {
+		color: black;
+		background: $main-yellow;
+		&:hover {
+			background: $main-yellow-hover;
+		}
+	}
+
+	&-black {
+		color: black;
+		background: $main-yellow;
+		&:hover {
+			background: $main-yellow-hover;
+		}
+	}
+
+	&-blue {
+		width: 100%;
+		color: $main-blue;
+		border: 1px solid $main-blue;
+		&:hover {
+			background: $main-blue;
+			color: white;
+		}
+	}
+
+	&-with-border {
+		color: $main-yellow;
+		border: 1px solid $main-yellow;
+		&:hover {
+			background: $main-yellow;
+			color: black;
+		}
+	}
+}

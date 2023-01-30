@@ -271,7 +271,7 @@ function initSliders() {
 			observer: true,
 			breakpoints: {
 				0: {
-					slidesPerView: 1.2,
+					slidesPerView: 1,
 					spaceBetween: 16
 				},
 				480: {

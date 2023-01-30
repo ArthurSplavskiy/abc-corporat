@@ -1,0 +1,48 @@
+.partners-slider {
+	display: flex;
+	overflow: visible !important;
+
+	&__swiper {
+		align-items: center;
+	}
+	&-slide {
+		& > * {
+			max-width: 180px;
+			@media (max-width: $mobile) {
+				max-width: 136px;
+			}
+		}
+		svg {
+			transition: $transition;
+		}
+	}
+	&-descr {
+		text-transform: uppercase;
+		display: flex;
+		justify-content: flex-end;
+		margin-top: 42px;
+		padding-top: 14px;
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 14px;
+		color: $main-blue;
+		border-top: 1px solid $main-blue;
+		@media (max-width: $mobile) {
+			margin-top: 16px;
+		}
+	}
+	&-grey {
+		svg {
+			&:not(:hover) {
+				fill: #525259;
+			}
+		}
+	}
+	&-blue {
+		svg {
+			&:not(:hover) {
+				fill: $main-blue;
+			}
+		}
+	}
+}

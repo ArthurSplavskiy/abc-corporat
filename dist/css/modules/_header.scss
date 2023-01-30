@@ -1,0 +1,93 @@
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: z('header');
+	transition: box-shadow 0.3s, background 0.4s;
+
+	&-logo {
+		max-width: 200px;
+		@media (max-width: $mobile) {
+			max-width: 122px;
+		}
+	}
+
+	&-wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 24px rem(60) calc($containerPadding / 2) + px rem(60);
+		@media (max-width: 1465px) {
+			max-width: $containerWidth;
+			box-sizing: content-box;
+			margin: 0 auto;
+			padding: 24px calc($containerPadding / 2) + px;
+		}
+		@media (max-width: $mobile) {
+			padding: calc($containerPadding / 2) + px;
+		}
+	}
+
+	&-menu-btn {
+		@extend %flex-center;
+		position: fixed;
+		top: 24px;
+		right: rem(60);
+		width: 64px;
+		height: 64px;
+		border-radius: 100%;
+		background: none;
+		border: none;
+		cursor: pointer;
+		z-index: 3;
+		@media (max-width: 1465px) {
+			right: calc($containerPadding / 2) + px;
+		}
+		@media (max-width: $mobile) {
+			top: 12px;
+		}
+		&-decor {
+			pointer-events: none;
+			width: 100%;
+			height: 100%;
+			@extend %absolute-center;
+			svg {
+				transform: scale(1.55) !important;
+			}
+		}
+		.progress {
+			width: 64px;
+			height: 64px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%) rotate(-90deg) scale(1.05);
+			z-index: 4;
+			@media (max-width: $mobile) {
+				&:not(.progress-mobile) {
+					display: none;
+				}
+			}
+			&-circle {
+				@media (max-width: $mobile) {
+					&:not(.progress-circle-mobile) {
+						display: none;
+					}
+				}
+			}
+		}
+		.progress-mobile {
+			width: 40px;
+			height: 40px;
+			@media (min-width: $mobile) {
+				display: none;
+			}
+			&-circle {
+				@media (min-width: $mobile) {
+					display: none;
+				}
+			}
+		}
+	}
+}

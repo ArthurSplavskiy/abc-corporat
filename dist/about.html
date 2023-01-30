@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="uk" prefix="og: http://ogp.me/ns#">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>ABC</title>
+
+	<meta name="description" content="ABC" />
+	<meta name="keywords" content="ABC, Description" />
+	<meta property="og:locale" content="[locale]" />
+	<meta property="og:title" content="ABC" />
+	<meta property="og:description" content="Tech" />
+	<meta property="og:url" content="[url]" />
+	<meta property="og:image" content="img/favicons/opengraph.jpg" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<link type="image/x-icon" rel="shortcut icon" href="img/favicons/favicon-16x16.png" />
+	<link type="image/png" sizes="32x32" rel="icon" href="img/favicons/favicon-32x32.png" />
+	<link type="image/png" sizes="48x48" rel="icon" href="img/favicons/favicon-48x48.png" />
+	<link sizes="180x180" rel="apple-touch-icon" href="img/favicons/apple-touch-icon-180x180.png" />
+	<link color="#088ECB" rel="mask-icon" href="img/favicons/safari-pinned-tab-16x16.svg" />
+	<meta name="msapplication-TileColor" content="#088ECB" />
+	<meta name="msapplication-TileImage" content="img/favicons/mstile-144x144.png" />
+	<meta name="application-name" content="Nordisk Maskin" />
+	<meta name="theme-color" content="#000000" />
+
+	<!--preloader-->
+	<style>
+		[data-an]:not(._animated) {
+			opacity: 0;
+		}
+
+		.preloader {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: fixed;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			background: black;
+			z-index: 99999;
+			transition: opacity 2s;
+		}
+
+		.preloader-inner {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			transition: opacity 0.8s;
+		}
+
+		.preloader_hide {
+			opacity: 0;
+		}
+
+		[data-lottie='preloader'] {
+			width: 50vw;
+			margin-left: -10vw;
+			height: auto;
+		}
+
+		.preloader_hide .preloader-inner {
+			opacity: 0;
+		}
+	</style>
+</head>
+
+
+<body class="p-template">
+	<div class="wrapper" id="mainTop" style="overflow: hidden">
+		<div class="preloader">
+			<div class="preloader-inner">
+				<div data-lottie="preloader"></div>
+			</div>
+		</div>
+		<header id="top" class="header">
+			<div class="header-wrapper">
+				<a class="header-logo" href="index.html" data-an="_fadeIn">
+					<img src="img/logo.svg" alt="abc" />
+				</a>
+				<button class="header-menu-btn" data-menu-btn data-an="_fadeIn">
+					<span class="inner">
+						<span></span>
+					</span>
+					<svg class="progress progress-mobile" width="40" height="40">
+						<circle class="progress-circle-mobile" stroke="#00538b" stroke-width="2" cx="19" cy="19" r="18" fill="transparent" />
+					</svg>
+					<svg class="progress" width="64" height="64">
+						<circle class="progress-circle" stroke="#00538b" stroke-width="2" cx="31" cy="31" r="30" fill="transparent" />
+					</svg>
+
+					<div class="header-menu-btn-decor" data-lottie="menu-btn-decor"></div>
+				</button>
+				<div class="menu" data-menu>
+					<div class="menu-overlay" data-menu-overlay></div>
+					<div class="menu-content">
+						<div class="menu-headline">
+							<span>menu</span>
+							<div class="menu-locales" data-spollers data-da=".menu-footer .contacts-icons, 768, last">
+								<div data-spoller>
+									<span>UA</span>
+									<img class="shevron" src="img/interface/shevron.svg" alt="Party Go" />
+								</div>
+								<ul>
+									<li>
+										<a href="#">EN</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<ul class="menu-first-level">
+							<li>
+								<div class="menu-first-level-head">
+									<img src="img/interface/menu-arrow.svg" alt="menu" />
+									<a href="index.html">головна</a>
+								</div>
+							</li>
+							<li>
+								<div class="menu-first-level-head">
+									<img src="img/interface/menu-arrow.svg" alt="menu" />
+									<a href="about.html">ПРО КОМПАНІЮ</a>
+								</div>
+							</li>
+							<li>
+								<div class="menu-first-level-head" data-second-lvl-btn="0">
+									<img src="img/interface/menu-arrow.svg" alt="menu" />
+									<span>НАПРЯМКИ ДІЯЛЬНОСТІ</span>
+									<button class="menu-second-level-btn"></button>
+								</div>
+								<div class="menu-second-level" data-second-lvl="0">
+									<ul class="menu-second-level-list">
+										<li>
+											<a href="services.html">інфоРМАЦІЙНА БЕЗПЕКА</a>
+										</li>
+										<li>
+											<a href="services.html">МЕРЕЖЕВА ІНФРАСТРКТУРА</a>
+										</li>
+										<li>
+											<a href="services.html">Телефонiя та вiдеоконференцзв'язок</a>
+										</li>
+										<li>
+											<a href="services.html">СЕРВЕРИ ТА СИСТЕМИ ЗБЕРІГАННЯ</a>
+										</li>
+										<li>
+											<a href="services.html">Персональні та інфраструктурні програмні продукти</a>
+										</li>
+										<li>
+											<a href="services.html">ПЕРСОНАЛЬНА ТЕХНІКА</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<div class="menu-first-level-head">
+									<img src="img/interface/menu-arrow.svg" alt="menu" />
+									<a href="portfolio.html">ПОРТФОЛІО</a>
+								</div>
+							</li>
+							<li>
+								<div class="menu-first-level-head">
+									<img src="img/interface/menu-arrow.svg" alt="menu" />
+									<a href="blog.html">БЛОГ</a>
+								</div>
+							</li>
+							<li>
+								<div class="menu-first-level-head">
+									<img src="img/interface/menu-arrow.svg" alt="menu" />
+									<a href="contacts.html">КОНТАКТИ</a>
+								</div>
+							</li>
+						</ul>
+						<footer class="menu-footer">
+							<div class="contacts">
+								<ul class="contacts-text">
+									<li>
+										<span>Адреса: </span>
+										<span>04071 м.київ вул. верхній вал, 4а</span>
+									</li>
+									<li>
+										<span>ТЕЛЕФОН: </span>
+										<a href="tel:380443590098">+ 044 359 00 98</a>
+									</li>
+									<li>
+										<span>EMAIL: </span>
+										<a href="mailto:info@abcommunication.com.ua">info@abcommunication.com.ua</a>
+									</li>
+								</ul>
+								<ul class="contacts-icons">
+									<li class="contacts-icons-item">
+										<a href="#" target="_blank">
+											<img src="img/interface/menu-twitter.svg" alt="twitter" />
+										</a>
+									</li>
+									<li class="contacts-icons-item">
+										<a href="#">
+											<img src="img/interface/menu-instagram.svg" alt="instagram" />
+										</a>
+									</li>
+									<li class="contacts-icons-item">
+										<a href="#">
+											<img src="img/interface/menu-skype.svg" alt="skype" />
+										</a>
+									</li>
+									<li class="contacts-icons-item">
+										<a href="#">
+											<img src="img/interface/menu-facebook.svg" alt="facebook" />
+										</a>
+									</li>
+								</ul>
+							</div>
+						</footer>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main data-an="_fadeIn">
+			<section class="s-hero">
+				<div class="s-hero-image" data-an="_fadeIn">
+					<img src="img/about-promo.jpeg" alt="abc" />
+				</div>
+				<div class="container">
+					<div class="s-hero-content" data-an="_fadeUp20">
+						<nav class="breadcrumbs">
+							<ul class="breadcrumbs__list" itemscope itemtype="http://schema.org/BreadcrumbList">
+								<li itemscope itemtype="http://schema.org/ListItem">
+									<a class="breadcrumbs__link" itemprop="item" href="index.html">
+										<img src="img/interface/home-ico.svg" alt="home" />
+									</a>
+									<meta itemprop="position" content="1" />
+								</li>
+								<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+									<span class="breadcrumbs__link" itemprop="name">ПРО НАС</span>
+									<meta itemprop="position" content="2" />
+								</li>
+							</ul>
+						</nav>
+						<h1 class="s-hero-title" data-an="_fadeUp20">
+							<div>
+								<span data-lottie="a"></span>
+								<span>CTIVE</span>
+							</div>
+							<div>
+								<span data-lottie="b"></span>
+								<span>USINESS</span>
+							</div>
+							<div>
+								<span data-lottie="c"></span>
+								<span>OMMUNICATION</span>
+							</div>
+						</h1>
+						<div class="s-hero-descr page-text">
+							<p data-an="_fadeLt20">історія НАШОЇ КОМПАНІЇ</p>
+							<ul>
+								<li data-an="_fadeLt20" data-del="0.2">-коМАНДА</li>
+								<li data-an="_fadeLt20" data-del="0.4">-ВІДГУКИ</li>
+								<li data-an="_fadeLt20" data-del="0.6">-СЕРТИФІКАТИ</li>
+							</ul>
+						</div>
+						<a href="next-section" class="s-hero-anchor" data-anchor="next-section" data-an="_fadeIn">
+							<div>
+								<img src="img/interface/anchor-arrow.svg" alt="next">
+							</div>
+						</a>
+						<span class="s-hero-vertical-text"> it SECURE SOFT COMMUNICATION </span>
+					</div>
+				</div>
+			</section>
+			<section id="next-section" class="s-article s-article-black">
+				<img src="img/interface/s-article-decor.svg" alt="abc" class="s-article-decor" />
+				<div class="container">
+					<article class="s-article-row">
+						<div class="section-headline" data-an="_fadeIn">
+							<h2 class="page-title" data-an="_fadeUp">історія ABCOMMUNICATION</h2>
+							<h4 data-an="_fadeUp" data-del="0.2">
+								Ми поєднуємо стратегічний змістовий підхід з цілеспрямованою діяльністю
+								досягнення.
+							</h4>
+							<div class="s-article-image-1"></div>
+							<p class="page-text" data-an="_fadeUp" data-del="0.4">
+								Наша місія полягає в тому, щоб запропонувати Вам багатофункціональні послуги за
+								доступними цінами з найкращим обслуговуванням. ABC - ми допоможемо Вам
+								адаптуватися до змін цифрового світу та трансформувати Ваш бізнес до сучасних
+								передових технологій.
+							</p>
+						</div>
+						<div class="s-article-image img-animate" data-an="_fadeIn" data-da=".s-article-image-1, 480, first">
+							<img src="img/05.jpeg" alt="abc" />
+						</div>
+					</article>
+					<article class="s-article-row">
+						<div class="s-article-text" data-an="_fadeIn">
+							<h4 data-an="_fadeUp">
+								Ми поєднуємо стратегічний змістовий підхід з цілеспрямованою діяльністю
+								досягнення. Ми поєднуємо стратегічний змістовий підхід з цілеспрямованою
+								діяльністю досягнення.
+							</h4>
+							<div class="s-article-image-2"></div>
+							<p class="page-text" data-an="_fadeUp" data-del="0.2">
+								Наша місія полягає в тому, щоб запропонувати Вам багатофункціональні послуги за
+								доступними цінами з найкращим обслуговуванням. ABC - ми допоможемо Вам
+								адаптуватися до змін цифрового світу та трансформувати Ваш бізнес до сучасних
+								передових технологій.
+							</p>
+						</div>
+						<div class="s-article-image img-animate" data-an="_fadeIn" data-da=".s-article-image-2, 480, first">
+							<img src="img/04.png" alt="abc" />
+						</div>
+					</article>
+				</div>
+			</section>
+			<section class="s-team-promo">
+				<div class="container">
+					<div class="s-team-promo-content">
+						<div class="s-team-promo-image-decor" data-an="_fadeIn">
+							<div class="s-team-promo-image img-animate" data-an="_fadeIn">
+								<img src="img/06.jpeg" alt="abc" />
+							</div>
+						</div>
+						<div class="s-team-promo-row" data-an="_fadeRt20">розвиток КОМПАНІЇ</div>
+						<div class="s-team-promo-row" data-an="_fadeRt20" data-del="0.2">
+							<div class="s-team-promo-decor-1" style="background-image: url('img/interface/team-promo-decor-1.svg')"></div>
+							ЗАЛЕЖИТЬ
+						</div>
+						<div class="s-team-promo-row" data-an="_fadeRt20" data-del="0.4">
+							ВІД <br />
+							СПРАЦЬОВАНОСТІ
+						</div>
+						<div class="s-team-promo-row">
+							<div class="s-team-promo-image img-animate" data-an="_fadeIn">
+								<img src="img/07.jpeg" alt="abc" />
+							</div>
+							<div data-an="_fadeRt20" data-del="0.6">
+								<div class="s-team-playground">
+									<div>К</div>
+									<div class="s-team-playground-grid">
+										<span class="s-team-playground-o">O</span>
+										<span>МАНДИ</span>
+										<div class="s-team-playground-hueta">
+											<img src="img/interface/team-promo-decor-2.svg" alt="abc" />
+										</div>
+										<div class="s-team-playground-bg" style="background-image: url('img/interface/team-promo-decor-3.svg')"></div>
+									</div>
+								</div>
+							</div>
+							<div class="s-team-promo-decor-text" data-an="_fadeIn">
+								it SECURE SOFT COMMUNICATION
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="s-team">
+				<div class="container">
+					<div class="s-team-content">
+						<div class="section-headline" data-an="_fadeIn">
+							<h2 class="page-title" data-an="_fadeUp">КОМАНДА ABCOMMUNICATION</h2>
+							<p class="page-text" data-an="_fadeUp" data-del="0.2">
+								Ми поєднуємо стратегічний змістовий підхід з цілеспрямованою діяльністю
+								досягнення.
+							</p>
+						</div>
+						<div class="s-team-grid">
+							<div class="s-team-card">
+								<div class="s-team-card-image img-animate" data-an="_fadeIn">
+									<img src="img/team/01.jpeg" alt="abc" />
+								</div>
+								<span class="s-team-card-name">Анна Вінтур</span>
+								<div class="s-team-card-contacts">
+									<span>PR менеджер</span>
+									<div>
+										<a href="#">
+											<img src="img/interface/linkedin.svg" alt="linkedin" />
+										</a>
+										<a href="#">
+											<img src="img/interface/facebook.svg" alt="facebook" />
+										</a>
+									</div>
+								</div>
+								<div class="s-team-card-descr">
+									“ Ми цінуємомо розвиток кожного з працівників, тому робимо все можливе ”
+								</div>
+							</div>
+							<div class="s-team-card">
+								<div class="s-team-card-image img-animate" data-an="_fadeIn" data-del="0.2">
+									<img src="img/team/02.jpeg" alt="abc" />
+								</div>
+								<span class="s-team-card-name">Володимир Грановський</span>
+								<div class="s-team-card-contacts">
+									<span>Co-founder</span>
+									<div>
+										<a href="#">
+											<img src="img/interface/linkedin.svg" alt="linkedin" />
+										</a>
+										<a href="#">
+											<img src="img/interface/facebook.svg" alt="facebook" />
+										</a>
+									</div>
+								</div>
+								<div class="s-team-card-descr">
+									“ Ми цінуємомо розвиток кожного з працівників, тому робимо все можливе ”
+								</div>
+							</div>
+							<div class="s-team-card">
+								<div class="s-team-card-image img-animate" data-an="_fadeIn" data-del="0.4">
+									<img src="img/team/03.jpeg" alt="abc" />
+								</div>
+								<span class="s-team-card-name">Мирослава Зінченко</span>
+								<div class="s-team-card-contacts">
+									<span>CEO</span>
+									<div>
+										<a href="#">
+											<img src="img/interface/linkedin.svg" alt="linkedin" />
+										</a>
+										<a href="#">
+											<img src="img/interface/facebook.svg" alt="facebook" />
+										</a>
+									</div>
+								</div>
+								<div class="s-team-card-descr">
+									“ Ми цінуємомо розвиток кожного з працівників, тому робимо все можливе ”
+								</div>
+							</div>
+							<div class="s-team-card">
+								<div class="s-team-card-image img-animate" data-an="_fadeIn" data-del="0.6">
+									<img src="img/team/04.jpeg" alt="abc" />
+								</div>
+								<span class="s-team-card-name">Констянтин Бернадський</span>
+								<div class="s-team-card-contacts">
+									<span>CEO</span>
+									<div>
+										<a href="#">
+											<img src="img/interface/linkedin.svg" alt="linkedin" />
+										</a>
+										<a href="#">
+											<img src="img/interface/facebook.svg" alt="facebook" />
+										</a>
+									</div>
+								</div>
+								<div class="s-team-card-descr">
+									“ Ми цінуємомо розвиток кожного з працівників, тому робимо все можливе ”
+								</div>
+							</div>
+
+							<div class="s-team-card">
+								<div class="s-team-card-image img-animate" data-an="_fadeIn" data-del="0.2">
+									<img src="img/team/05.jpeg" alt="abc" />
+								</div>
+								<span class="s-team-card-name">Анна Вінтур</span>
+								<div class="s-team-card-contacts">
+									<span>PR менеджер</span>
+									<div>
+										<a href="#">
+											<img src="img/interface/linkedin.svg" alt="linkedin" />
+										</a>
+										<a href="#">
+											<img src="img/interface/facebook.svg" alt="facebook" />
+										</a>
+									</div>
+								</div>
+								<div class="s-team-card-descr">
+									“ Ми цінуємомо розвиток кожного з працівників, тому робимо все можливе ”
+								</div>
+							</div>
+							<div class="s-team-card">
+								<div class="s-team-card-image img-animate" data-an="_fadeIn" data-del="0.4">
+									<img src="img/team/06.jpeg" alt="abc" />
+								</div>
+								<span class="s-team-card-name">Володимир Грановський</span>
+								<div class="s-team-card-contacts">
+									<span>Co-founder</span>
+									<div>
+										<a href="#">
+											<img src="img/interface/linkedin.svg" alt="linkedin" />
+										</a>
+										<a href="#">
+											<img src="img/interface/facebook.svg" alt="facebook" />
+										</a>
+									</div>
+								</div>
+								<div class="s-team-card-descr">
+									“ Ми цінуємомо розвиток кожного з працівників, тому робимо все можливе ”
+								</div>
+							</div>
+							<div class="s-team-card">
+								<div class="s-team-card-image img-animate" data-an="_fadeIn" data-del="0.6">
+									<img src="img/team/07.jpeg" alt="abc" />
+								</div>
+								<span class="s-team-card-name">Мирослава Зінченко</span>
+								<div class="s-team-card-contacts">
+									<span>CEO</span>
+									<div>
+										<a href="#">
+											<img src="img/interface/linkedin.svg" alt="linkedin" />
+										</a>
+										<a href="#">
+											<img src="img/interface/facebook.svg" alt="facebook" />
+										</a>
+									</div>
+								</div>
+								<div class="s-team-card-descr">
+									“ Ми цінуємомо розвиток кожного з працівників, тому робимо все можливе ”
+								</div>
+							</div>
+							<div class="s-team-card">
+								<div class="s-team-card-image img-animate" data-an="_fadeIn" data-del="0.8">
+									<img src="img/team/08.jpeg" alt="abc" />
+								</div>
+								<span class="s-team-card-name">Констянтин Бернадський</span>
+								<div class="s-team-card-contacts">
+									<span>CEO</span>
+									<div>
+										<a href="#">
+											<img src="img/interface/linkedin.svg" alt="linkedin" />
+										</a>
+										<a href="#">
+											<img src="img/interface/facebook.svg" alt="facebook" />
+										</a>
+									</div>
+								</div>
+								<div class="s-team-card-descr">
+									“ Ми цінуємомо розвиток кожного з працівників, тому робимо все можливе ”
+								</div>
+							</div>
+						</div>
+						<a href="#" class="btn btn-black">поКАЗАТИ БІЛЬШЕ</a>
+					</div>
+				</div>
+			</section>
+			<section class="s-quote" data-an="_fadeIn">
+				<img src="img/interface/quote-decor.svg" class="s-quote-decor" />
+				<div class="container">
+					<div class="s-quote-content">
+						<div class="s-quote-slider" data-swiper="quote-slider" data-an="_fadeIn">
+							<div class="s-quote-slider__swiper">
+								<div class="s-quote-slider-slide quote">
+									<h3 class="quote-title">
+										“ ми ДОПОМАГАЄМО НАШИМ ПРАЦІВНИКАМ ЗРОСТАТИ РАЗОМ З КОМПАНІЄЮ, СЛІДКУЄМО ЗА
+										ЯКІСНОЮ КОМУНІКАЦІЄЮ”
+									</h3>
+									<div class="quote-author" data-swiper-parallax="-400">
+										<div class="quote-author-avatar">
+											<img src="img/interface/quote-avatar-decor.svg" alt="abc" />
+											<img src="img/team/01.jpeg" alt="abc" />
+										</div>
+										<div class="quote-author-descr">
+											<span class="quote-author-name">Анна Вінтур</span>
+											<span class="quote-author-post">PR менеджер компанії ABCommunacation</span>
+										</div>
+									</div>
+								</div>
+								<div class="s-quote-slider-slide quote">
+									<h3 class="quote-title">
+										“ ми ДОПОМАГАЄМО НАШИМ ПРАЦІВНИКАМ ЗРОСТАТИ РАЗОМ З КОМПАНІЄЮ, СЛІДКУЄМО ЗА
+										ЯКІСНОЮ КОМУНІКАЦІЄЮ”
+									</h3>
+									<div class="quote-author" data-swiper-parallax="-400">
+										<div class="quote-author-avatar">
+											<img src="img/interface/quote-avatar-decor.svg" alt="abc" />
+											<img src="img/team/01.jpeg" alt="abc" />
+										</div>
+										<div class="quote-author-descr">
+											<span class="quote-author-name">Анна Вінтур</span>
+											<span class="quote-author-post">PR менеджер компанії ABCommunacation</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="sliders-controls sliders-controls-big sliders-controls-color-reverse">
+							<button data-swiper-control="quote-slider-prev">
+								<img src="img/interface/slider-arrow.svg" alt="prev" />
+							</button>
+							<button data-swiper-control="quote-slider-next">
+								<img src="img/interface/slider-arrow.svg" alt="next" />
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="s-sertificates black-mode">
+				<div class="container">
+					<div class="section-headline" data-an="_fadeIn">
+						<h2 class="page-title" data-an="_fadeUp">лІЦЕНЗІЇ ТА СЕРТИФІКАТИ</h2>
+						<p class="page-text" data-an="_fadeUp" data-del="0.2">
+							Ми співпрацюємо з компаніями міжнародного рівня, що допомагає нам створювати та
+							підтримувати якісний продукт.
+						</p>
+					</div>
+					<div class="sertificates-slider-content" data-an="_fadeIn" data-del="0.3">
+						<div class="sertificates-slider-nav">
+							<div class="sliders-controls sliders-controls-color-reverse">
+								<button data-swiper-control="sertificates-slider-prev">
+									<img src="img/interface/slider-arrow.svg" alt="prev" />
+								</button>
+								<button data-swiper-control="sertificates-slider-next">
+									<img src="img/interface/slider-arrow.svg" alt="next" />
+								</button>
+							</div>
+						</div>
+						<div class="sertificates-slider" data-swiper="sertificates-slider">
+							<div class="sertificates-slider__swiper">
+								<a href="#" class="sertificates-slider-slide">
+									<div class="sertificates-slider-slide-logo">
+										<img src="img/interface/ibm-logo.svg" alt="ibm" />
+									</div>
+									<div class="sertificates-slider-slide-title">
+										<h4>infoRMATION SECURITY: 4 KEY GOALS</h4>
+									</div>
+								</a>
+								<a href="#" class="sertificates-slider-slide">
+									<div class="sertificates-slider-slide-logo">
+										<img src="img/interface/microsoft-logo.svg" alt="ibm" />
+									</div>
+									<div class="sertificates-slider-slide-title">
+										<h4>infoRMATION SECURITY: 4 KEY GOALS</h4>
+									</div>
+								</a>
+								<a href="#" class="sertificates-slider-slide">
+									<div class="sertificates-slider-slide-logo">
+										<img src="img/interface/ibm-logo.svg" alt="ibm" />
+									</div>
+									<div class="sertificates-slider-slide-title">
+										<h4>infoRMATION SECURITY: 4 KEY GOALS</h4>
+									</div>
+								</a>
+								<a href="#" class="sertificates-slider-slide">
+									<div class="sertificates-slider-slide-logo">
+										<img src="img/interface/microsoft-logo.svg" alt="ibm" />
+									</div>
+									<div class="sertificates-slider-slide-title">
+										<h4>infoRMATION SECURITY: 4 KEY GOALS</h4>
+									</div>
+								</a>
+								<a href="#" class="sertificates-slider-slide">
+									<div class="sertificates-slider-slide-logo">
+										<img src="img/interface/ibm-logo.svg" alt="ibm" />
+									</div>
+									<div class="sertificates-slider-slide-title">
+										<h4>infoRMATION SECURITY: 4 KEY GOALS</h4>
+									</div>
+								</a>
+								<a href="#" class="sertificates-slider-slide">
+									<div class="sertificates-slider-slide-logo">
+										<img src="img/interface/microsoft-logo.svg" alt="ibm" />
+									</div>
+									<div class="sertificates-slider-slide-title">
+										<h4>infoRMATION SECURITY: 4 KEY GOALS</h4>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="s-vacancy black-mode">
+				<div class="container">
+					<div class="s-vacancy-content">
+						<div class="section-headline" data-an="_fadeIn">
+							<h2 class="page-title" data-an="_fadeUp">ПРИЄДНАЙСЯ ДО НАШОЇ КОМАНДИ</h2>
+							<p class="page-text" data-an="_fadeUp" data-del="0.2">
+								Ми співпрацюємо з компаніями міжнародного рівня, що допомагає нам створювати та
+								підтримувати якісний продукт.
+							</p>
+						</div>
+						<div data-tabs="768" class="tabs">
+							<nav data-tabs-titles class="tabs-navigation">
+								<button type="submit" class="tabs-title _tab-active" data-an="_fadeUp">
+									<span>Devops</span>
+									<img src="img/interface/tab-arrow.svg" alt="abc" />
+								</button>
+								<button type="submit" class="tabs-title" data-an="_fadeUp" data-del="0.2">
+									<span>Адміністратор</span>
+									<img src="img/interface/tab-arrow.svg" alt="abc" />
+								</button>
+								<button type="submit" class="tabs-title" data-an="_fadeUp" data-del="0.4">
+									<span>back-end (laravel)</span>
+									<img src="img/interface/tab-arrow.svg" alt="abc" />
+								</button>
+							</nav>
+							<div data-tabs-body class="tabs-content" data-an="_fadeIn">
+								<div class="tabs-body">
+									<h3>DevOps</h3>
+									<h4>опис ВАКАНСІЇ</h4>
+									<ul>
+										<li>Основні вимоги до кандидата:</li>
+										<li>- Досвід розробки веб-сайтів і PHP-програмування від 1 року;</li>
+										<li>- Знання PHP, MySQL, JS, HTML, CSS;</li>
+										<li>- Міцні знання роботи на CMS WordPress;</li>
+										<li>- Вміння працювати з стороніми API;</li>
+										<li>- Плюсом буде досвід роботи з Laravel, Symfony, Yii 2.0;</li>
+										<li>- Плюсом буде знання git, gulp, sass;</li>
+										<li>- Наявність портфоліо.</li>
+									</ul>
+									<a href="#" class="btn btn-white" data-popup-open="cv">ВІДГУКНУТИСя</a>
+								</div>
+								<div class="tabs-body">
+									<h3>Адміністратор</h3>
+									<h4>опис ВАКАНСІЇ</h4>
+									<ul>
+										<li>Основні вимоги до кандидата:</li>
+										<li>- Досвід розробки веб-сайтів і PHP-програмування від 1 року;</li>
+										<li>- Знання PHP, MySQL, JS, HTML, CSS;</li>
+										<li>- Міцні знання роботи на CMS WordPress;</li>
+										<li>- Вміння працювати з стороніми API;</li>
+										<li>- Плюсом буде досвід роботи з Laravel, Symfony, Yii 2.0;</li>
+										<li>- Плюсом буде знання git, gulp, sass;</li>
+										<li>- Наявність портфоліо.</li>
+									</ul>
+									<a href="#" class="btn btn-white" data-popup-open="cv">ВІДГУКНУТИСя</a>
+								</div>
+								<div class="tabs-body">
+									<h3>back-end (laravel)</h3>
+									<h4>опис ВАКАНСІЇ</h4>
+									<ul>
+										<li>Основні вимоги до кандидата:</li>
+										<li>- Досвід розробки веб-сайтів і PHP-програмування від 1 року;</li>
+										<li>- Знання PHP, MySQL, JS, HTML, CSS;</li>
+										<li>- Міцні знання роботи на CMS WordPress;</li>
+										<li>- Вміння працювати з стороніми API;</li>
+										<li>- Плюсом буде досвід роботи з Laravel, Symfony, Yii 2.0;</li>
+										<li>- Плюсом буде знання git, gulp, sass;</li>
+										<li>- Наявність портфоліо.</li>
+									</ul>
+									<a href="#" class="btn btn-white" data-popup-open="cv">ВІДГУКНУТИСя</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer-anchor" style="background-image: url('img/page-bg.jpeg')" data-an="_fadeIn" data-del="0.2">
+				<a href="#top" data-lottie="anchor" data-anchor="top"></a>
+			</div>
+			<div class="container">
+				<div class="footer-content" data-an="_fadeIn" data-del="0.3">
+					<div class="footer-top">
+						<div class="footer-left-side">
+							<div class="footer-column">
+								<div class="footer-logo">
+									<a href="index.html">
+										<img src="img/interface/footer-logo.svg" alt="abc" />
+									</a>
+								</div>
+								<img src="img/interface/footer-logo-text.svg" alt="abc" />
+							</div>
+							<div class="footer-column" data-da=".footer-column_first, 768, first">
+								<a href="index.html" class="footer-title-link">Головна</a>
+							</div>
+							<div class="footer-column">
+								<a href="services.html" class="footer-title-link">НАПРЯМКИ ДІЯЛЬНОСТІ</a>
+								<ul class="footer-links">
+									<li>
+										<a href="services.html">ІНФОРМАЦІЙНА БЕЗпека</a>
+									</li>
+									<li>
+										<a href="services.html">МЕРЕЖЕВА ІНфрасТРУКТУРА</a>
+									</li>
+									<li>
+										<a href="services.html">Телефонiя та вiдеоконференцзв'язок</a>
+									</li>
+									<li>
+										<a href="services.html">СЕРВЕРИ ТА СИСТЕМИ ЗБЕРІГАННЯ</a>
+									</li>
+									<li>
+										<a href="services.html">ПЕРСОНАЛЬНІ ТА ІНФРАСТРУКТУРНІ ПРОГРАМНІ ПРОДУКТИ</a>
+									</li>
+									<li>
+										<a href="services.html">ПЕРСОНАЛЬНА ТЕХНІКА</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="footer-right-side">
+							<div class="footer-column footer-column_first" data-da=".footer-left-side, 1250, last">
+								<a href="about.html" class="footer-title-link">ПРО КОМПАНІЮ</a>
+								<ul class="footer-links-title">
+									<li>
+										<a href="portfolio.html">ПОРТФОЛІО</a>
+									</li>
+									<li>
+										<a href="blog.html">БЛОГ</a>
+									</li>
+									<li>
+										<a href="contacts.html">КОНТАКТИ</a>
+									</li>
+								</ul>
+							</div>
+							<div class="footer-column footer-column_second">
+								<a href="contacts.html" class="footer-title-link">КОНТАКТИ</a>
+								<div class="contacts">
+									<ul class="contacts-text">
+										<li>
+											<span>Адреса: </span>
+											<span>04071 м.київ вул. верхній вал, 4а</span>
+										</li>
+										<li>
+											<span>ТЕЛЕФОН: </span>
+											<a href="tel:380443590098">+ 044 359 00 98</a>
+										</li>
+										<li>
+											<span>EMAIL: </span>
+											<a href="mailto:info@abcommunication.com.ua">info@abcommunication.com.ua</a>
+										</li>
+									</ul>
+									<ul class="contacts-icons">
+										<li class="contacts-icons-item">
+											<a href="#" target="_blank">
+												<img src="img/interface/footer-twitter.svg" alt="twitter" />
+											</a>
+										</li>
+										<li class="contacts-icons-item">
+											<a href="#">
+												<img src="img/interface/footer-instagram.svg" alt="instagram" />
+											</a>
+										</li>
+										<li class="contacts-icons-item">
+											<a href="#">
+												<img src="img/interface/footer-skype.svg" alt="skype" />
+											</a>
+										</li>
+										<li class="contacts-icons-item">
+											<a href="#">
+												<img src="img/interface/footer-facebook.svg" alt="facebook" />
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="footer-bottom">
+						<span>©ABCOMMUNICATION</span>
+						<a href="terms-of-use.html">PRIVACY POLICY</a>
+						<a href="https://in-create.com/" target="_blank" rel="nofollow">
+							by: <img src="img/interface/logo-increate.svg" alt="Increate" />
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<div id="popup-cv" class="popup">
+			<div class="popup-content">
+				<div class="popup-head">
+					<h4>Sr. Product Designer</h4>
+					<div class="popup-close">
+						<img src="img/interface/close.svg" alt="close">
+					</div>
+				</div>
+				<form action="#" data-test data-message="#popup-thank">
+					<fieldset>
+						<input type="text" name="name" placeholder="ІМ’Я*" data-required>
+					</fieldset>
+					<fieldset>
+						<input type="text" name="phone" placeholder="НОМЕр телефону*" data-required data-phone-mask>
+					</fieldset>
+					<fieldset>
+						<input type="text" name="email" placeholder="EmAIL*" data-required="email">
+					</fieldset>
+					<fieldset>
+						<div data-input-file>
+							<input accept=".pdf, .png, .doc" type="file" name="file" class="file__input" data-error="Use only .pdf .doc .png" data-error-max-size="ATTACHED CV FILE (max 2Mb) *" data-placeholder="CV" data-required>
+							<div class="file__button">
+								<span class="message-text"></span>
+							</div>
+							<div class="icon-pin">
+								<img class="cross-icon" src="img/interface/close.svg" alt="close">
+								<img class="pin-icon" src="img/interface/pin.svg" alt="pin">
+							</div>
+						</div>
+					</fieldset>
+					<fieldset class="popup-form-submit-row">
+						<button type="submit" class="btn btn-black">НАДІСЛАТИ</button>
+						<span>Відправляючи форму ви погоджуєтеся з політикою <a href="terms-of-use.html">конфіденційності</a></span>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+		<div id="popup-thank" class="popup">
+			<div class="popup-content">
+				<div class="popup-close">
+					<img src="img/interface/close.svg" alt="Apvision">
+				</div>
+				<h2>Thank you!</h2>
+				<div>We'll get back to you soon</div>
+			</div>
+		</div> <!-- style -->
+		<link rel="stylesheet" href="css/style.min.css">
+		<!-- global variable -->
+		<script>
+			/*form message*/
+			let dir = './';
+			let messageRequire = "Обов'язкове поле",
+				messageFormat = "Не коректний формат";
+
+			let validationUnfillError = "Error, this is a required field"
+			let validationUncorrectError = "Incorrect"
+			let validationShortPassError = "more 8 symbols"
+			let validationConfirmPassError = "Confirm password"
+		</script>
+		<!-- libs -->
+		<script defer src="libs/swiper.js"></script>
+		<script defer src="libs/inputmask.min.js"></script>
+		<script defer src="libs/jquery-3.6.0.min.js"></script>
+		<script defer src="libs/dynamic_adapt.js"></script>
+		<script defer src="libs/lottie.min.js"></script>
+		<!-- custom -->
+		<script defer src="js/main.js"></script>
+
+
+	</div>
+</body>
+
+</html>
